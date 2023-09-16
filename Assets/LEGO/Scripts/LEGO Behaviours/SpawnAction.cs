@@ -208,7 +208,6 @@ namespace Unity.LEGO.Behaviours.Actions
         {
             if (m_Active && m_ModelCopy)
             {
-                Debug.Log("SpawnAction: " + m_State);
                 m_Time += Time.deltaTime;
 
                 // Trying to spawn the model.
