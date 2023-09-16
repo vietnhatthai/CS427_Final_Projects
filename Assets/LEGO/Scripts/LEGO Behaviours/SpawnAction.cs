@@ -208,6 +208,7 @@ namespace Unity.LEGO.Behaviours.Actions
         {
             if (m_Active && m_ModelCopy)
             {
+                Debug.Log("SpawnAction: " + m_State);
                 m_Time += Time.deltaTime;
 
                 // Trying to spawn the model.
@@ -902,6 +903,12 @@ namespace Unity.LEGO.Behaviours.Actions
                     m_ModelCopy.transform.localScale = Vector3.one;
                 }
             }
+        }
+
+        protected void ChangeModel(GameObject model)
+        {
+            m_Model = model;
+            Start();
         }
     }
 }
