@@ -19,12 +19,13 @@ namespace Unity.LEGO.Behaviours.Actions
         [SerializeField, Tooltip("The UI panel containing the layoutGroup for displaying objectives.")]
         WeaponHUB m_ObjectiveWeapons = default;
 
-        private bool m_chooseWeapon = false;
+        private bool m_chooseWeapon = true;
         private int m_WeaponIndex = 0;
 
         protected override void Start()
         {
             base.Start();
+            m_Repeat = false;
         }
 
         private void SelectWeaponHandler(int index)
@@ -33,12 +34,13 @@ namespace Unity.LEGO.Behaviours.Actions
             m_WeaponIndex = index;
             m_ObjectiveWeapons.Hide();
             m_Active = true;
-            m_chooseWeapon = true;
+            ChangeModel(m_WeaponData[m_WeaponIndex].m_Prefab);
+            m_chooseWeapon = false;
         }
 
         protected void Update()
         {
-            if (m_Active && !m_chooseWeapon)
+            if (m_Active && m_chooseWeapon)
             {
                 m_chooseWeapon = true;
                 m_ObjectiveWeapons.Show();
@@ -49,17 +51,15 @@ namespace Unity.LEGO.Behaviours.Actions
                 }
                 m_Active = false;
             }
-            
-            if (m_chooseWeapon)
+
+            if (!m_chooseWeapon && m_Active)
             {
-                Debug.Log("Spawning weapon");
-                ChangeModel(m_WeaponData[m_WeaponIndex].m_Prefab);
                 base.Update();
             }
 
-            if (!m_Active && m_chooseWeapon)
+            if (!m_Active && !m_chooseWeapon)
             {
-                m_chooseWeapon = false;
+                m_chooseWeapon = true;
             }
         }
     }
