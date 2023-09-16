@@ -9,6 +9,10 @@ namespace Unity.LEGO.Behaviours.Triggers
 {
     public class TouchColor : SensoryTrigger
     {
+        [SerializeField, Tooltip("Color to change to when triggered.")]
+        protected MouldingColour.Id m_MouldingColour = MouldingColour.Id.BrightBlue;
+
+        private List<int> color_original = new List<int>();
         protected override void Reset()
         {
             base.Reset();
@@ -19,6 +23,12 @@ namespace Unity.LEGO.Behaviours.Triggers
         protected override void Start()
         {
             base.Start();
+
+            List<Part> parts = GetComponent<Brick>().parts;
+            foreach (Part part in parts)
+            {
+                color_original.Add(part.materialIDs[0]);
+            }
 
             if (IsPlacedOnBrick())
             {
@@ -54,7 +64,7 @@ namespace Unity.LEGO.Behaviours.Triggers
             List<Part> parts = GetComponent<Brick>().parts;
             foreach (Part part in parts)
             {
-                part.materialIDs[0] = (int) MouldingColour.Id.BrightRed;
+                part.materialIDs[0] = (int)m_MouldingColour;
             }
             GetComponent<Brick>().SetMaterial(false);
         }
@@ -62,9 +72,9 @@ namespace Unity.LEGO.Behaviours.Triggers
         protected void SensoryColliderDeactivated(SensoryCollider collider)
         {
             List<Part> parts = GetComponent<Brick>().parts;
-            foreach (Part part in parts)
+            for (int i = 0; i < parts.Count; i++)
             {
-                part.materialIDs[0] = (int)MouldingColour.Id.BrightGreen;
+                parts[i].materialIDs[0] = color_original[i];
             }
             GetComponent<Brick>().SetMaterial(false);
         }
