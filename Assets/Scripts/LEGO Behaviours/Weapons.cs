@@ -1,10 +1,6 @@
-using LEGOModelImporter;
-using System.Buffers;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using Unity.LEGO.Behaviours;
-using Unity.LEGO.Utilities;
+using Unity.LEGO.Game;
+using Unity.LEGO.UI;
 using UnityEngine;
 
 
@@ -12,6 +8,8 @@ namespace Unity.LEGO.Behaviours.Actions
 {
     public class Weapons : SpawnAction
     {
+        [SerializeField, Tooltip("The variable to modify.")]
+        Game.Variable m_Variable = null;
 
         [SerializeField, Tooltip("The weapon data to use for the spawned weapon.")]
         List<WeaponData> m_WeaponData = default;
@@ -35,6 +33,7 @@ namespace Unity.LEGO.Behaviours.Actions
             m_ObjectiveWeapons.Hide();
             m_Active = true;
             ChangeModel(m_WeaponData[m_WeaponIndex].m_Prefab);
+            VariableManager.SetValue(m_Variable, VariableManager.GetValue(m_Variable) - (int)m_WeaponData[m_WeaponIndex].m_Price);
             m_chooseWeapon = false;
         }
 
