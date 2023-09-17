@@ -1,65 +1,187 @@
-using LEGOModelImporter;
-using System.Buffers;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using Unity.LEGO.Behaviours;
-using Unity.LEGO.Utilities;
+using Unity.LEGO.Behaviours.Triggers;
+using Unity.LEGO.Game;
+using Unity.LEGO.UI;
 using UnityEngine;
-
+using static Unity.LEGO.UI.SpeechBubblePrompt;
 
 namespace Unity.LEGO.Behaviours.Actions
 {
-    public class Weapons : SpawnAction
+    public class Weapons : Action
     {
+        public const int MaxCharactersPerSpeechBubble = 60;
 
-        [SerializeField, Tooltip("The weapon data to use for the spawned weapon.")]
-        List<WeaponData> m_WeaponData = default;
+        [SerializeField, Tooltip("Weapons data.")]
+        private ConfigWeapons m_WeaponsData;
 
-        [SerializeField, Tooltip("The UI panel containing the layoutGroup for displaying objectives.")]
-        WeaponHUB m_ObjectiveWeapons = default;
+        [SerializeField, Tooltip("The variable to modify.")]
+        private Game.Variable m_Variable;
 
-        private bool m_chooseWeapon = true;
-        private int m_WeaponIndex = 0;
+        [SerializeField]
+        BubbleInfo m_SpeechBubbleInfo = new BubbleInfo
+        {
+            Text = "Hello!",
+            Type = Type.InformationSign
+        };
+
+        [SerializeField]
+        GameObject m_SpeechBubblePromptPrefab = default;
+
+        SpeechBubblePrompt m_SpeechBubblePrompt;
+        bool m_PromptActive = true;
+        int m_Id;
+
+        private GameObject m_CurrentObject;
+        private GameObject m_ObjectToSpawn;
+        private GameObject instant;
+
+        private WeaponHUB weaponHUB;
+
+        protected override void Reset()
+        {
+            base.Reset();
+
+            m_IconPath = "Assets/LEGO/Gizmos/LEGO Behaviour Icons/Weapons.png";
+        }
 
         protected override void Start()
         {
             base.Start();
-            m_Repeat = false;
+            m_CurrentObject = gameObject;
+            m_ObjectToSpawn = m_WeaponsData.GetWeapon(0).m_Prefab;
+
+            weaponHUB = FindObjectOfType<WeaponHUB>();
         }
 
         private void SelectWeaponHandler(int index)
         {
-            Debug.Log("SelectWeaponHandler: " + index);
-            m_WeaponIndex = index;
-            m_ObjectiveWeapons.Hide();
-            m_Active = true;
-            ChangeModel(m_WeaponData[m_WeaponIndex].m_Prefab);
-            m_chooseWeapon = false;
+            m_ObjectToSpawn = m_WeaponsData.GetWeapon(index).m_Prefab;
+
+            if (instant == null)
+            {
+
+                int price = (int)m_WeaponsData.GetWeapon(index).m_Price;
+                int remaining = VariableManager.GetValue(m_Variable) - price;
+                if (remaining < 0)
+                {
+                    if (!m_SpeechBubblePrompt)
+                        SetupPrompt();
+                    UpdatePrompt(IsVisible());
+                    weaponHUB.Hide();
+                    return;
+                }
+
+                VariableManager.SetValue(m_Variable, remaining);
+                instant = Instantiate(m_ObjectToSpawn, m_CurrentObject.transform.position, m_CurrentObject.transform.rotation);
+                instant.transform.parent = m_CurrentObject.transform.parent;
+                instant.transform.localScale = m_CurrentObject.transform.localScale;
+                instant.transform.localRotation = m_CurrentObject.transform.localRotation;
+                instant.transform.localPosition = m_CurrentObject.transform.localPosition;
+                instant.transform.localEulerAngles = m_CurrentObject.transform.localEulerAngles;
+                instant.transform.parent = null;
+                m_CurrentObject.GetComponent<InputTrigger>().m_OtherKey = InputTrigger.Key.Q;
+                m_CurrentObject.GetComponent<InputTrigger>().UpdatePrompt();
+            }
+            weaponHUB.Hide();
         }
+
 
         protected void Update()
         {
-            if (m_Active && m_chooseWeapon)
+            if (m_Active && weaponHUB != null)
             {
-                m_chooseWeapon = true;
-                m_ObjectiveWeapons.Show();
-                for (int i = 0; i < m_WeaponData.Count; i++)
+                if (instant == null)
                 {
-                    m_ObjectiveWeapons.AddWeapon(m_WeaponData[i].m_Icon, i);
-                    m_ObjectiveWeapons.SelectWeapon += SelectWeaponHandler;
+                    weaponHUB.Show();
+                    for (int i = 0; i < m_WeaponsData.weapons.Length; i++)
+                    {
+                        weaponHUB.AddWeapon(m_WeaponsData.GetWeapon(i).m_Icon, i);
+                    }
+                    weaponHUB.SelectWeapon += SelectWeaponHandler;
                 }
+                else
+                {
+                    Destroy(instant);
+                    m_CurrentObject.GetComponent<InputTrigger>().m_OtherKey = InputTrigger.Key.E;
+                    m_CurrentObject.GetComponent<InputTrigger>().UpdatePrompt();
+                    int sell = (int)m_WeaponsData.GetWeapon(0).m_SellPrice;
+                    VariableManager.SetValue(m_Variable, VariableManager.GetValue(m_Variable) + sell);
+                }
+
                 m_Active = false;
             }
+        }
 
-            if (!m_chooseWeapon && m_Active)
+        void SetupPrompt()
+        {
+            PromptPlacementHandler promptHandler = null;
+
+            //foreach (var brick in m_ScopedBricks)
+            //{
+            //    if (brick.GetComponent<PromptPlacementHandler>())
+            //    {
+            //        promptHandler = brick.GetComponent<PromptPlacementHandler>();
+            //    }
+
+            //    var speakActions = brick.GetComponents<Weapons>();
+
+            //    foreach (var speakAction in speakActions)
+            //    {
+            //        if (speakAction.m_SpeechBubblePrompt)
+            //        {
+            //            m_SpeechBubblePrompt = speakAction.m_SpeechBubblePrompt;
+            //            break;
+            //        }
+            //    }
+            //}
+
+            var activeFromStart = IsVisible();
+
+            // Create a new speech bubble prompt if none was found.
+            if (!m_SpeechBubblePrompt)
             {
-                base.Update();
+                if (!promptHandler)
+                {
+                    promptHandler = gameObject.AddComponent<PromptPlacementHandler>();
+                }
+
+                var go = Instantiate(m_SpeechBubblePromptPrefab, promptHandler.transform);
+                m_SpeechBubblePrompt = go.GetComponent<SpeechBubblePrompt>();
+
+                // Get the current scoped bounds - might be different than the initial scoped bounds.
+                var scopedBounds = GetScopedBounds(m_ScopedBricks, out _, out _);
+                promptHandler.AddInstance(go, scopedBounds, PromptPlacementHandler.PromptType.SpeechBubble, activeFromStart);
             }
 
-            if (!m_Active && !m_chooseWeapon)
+            // Add this Speak Action to the speech bubble prompt.
+            List<BubbleInfo> m_SpeechBubbleInfos = new List<BubbleInfo>() { m_SpeechBubbleInfo };
+            Debug.Log("m_SpeechBubbleInfos.Count " + m_SpeechBubbleInfos.Count);
+            Debug.Log("m_SpeechBubblePrompt " + m_SpeechBubblePrompt);
+            m_Id = m_SpeechBubblePrompt.AddSpeech(m_SpeechBubbleInfos, 1, false, SpeechFinished, activeFromStart, promptHandler);
+        }
+
+        void SpeechFinished(int id)
+        {
+            if (m_Id == id)
             {
-                m_chooseWeapon = true;
+                UpdatePrompt(false);
+            }
+        }
+
+        void UpdatePrompt(bool active)
+        {
+            if (m_PromptActive != active)
+            {
+                m_PromptActive = active;
+
+                if (active)
+                {
+                    m_SpeechBubblePrompt.Activate(m_Id);
+                }
+                else
+                {
+                    m_SpeechBubblePrompt.Deactivate(m_Id);
+                }
             }
         }
     }
