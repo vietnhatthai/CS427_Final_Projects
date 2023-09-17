@@ -80,6 +80,21 @@ namespace Unity.LEGO.UI
             m_CanvasTransform.localScale = GetActiveLabelsCount() > 0 ? Vector3.one : Vector3.zero;
         }
 
+        public void UpdateLabel(string oldLabel, string newLabel)
+        {
+            if (m_LabelDictionary.ContainsKey(oldLabel))
+            {
+                var labelInfo = m_LabelDictionary[oldLabel];
+                m_LabelDictionary.Remove(oldLabel);
+                m_LabelDictionary.Add(newLabel, labelInfo);
+
+                if (m_Text.text == oldLabel)
+                {
+                    m_Text.text = newLabel;
+                }
+            }
+        }
+
 
         public void Activate(string label)
         {

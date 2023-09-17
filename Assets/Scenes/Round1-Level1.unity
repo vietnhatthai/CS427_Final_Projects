@@ -716,12 +716,12 @@ PrefabInstance:
     - target: {fileID: 8798865682888271160, guid: 7760cce19732e194e9bf2b10175a5eee,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0074222977
+      value: -0.0074222973
       objectReference: {fileID: 0}
     - target: {fileID: 8798865682888271160, guid: 7760cce19732e194e9bf2b10175a5eee,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0013739978
+      value: 0.0013739977
       objectReference: {fileID: 0}
     - target: {fileID: 8798865682888271161, guid: 7760cce19732e194e9bf2b10175a5eee,
         type: 3}
@@ -1257,6 +1257,8 @@ GameObject:
   - component: {fileID: 97637301}
   - component: {fileID: 97637300}
   - component: {fileID: 97637305}
+  - component: {fileID: 97637306}
+  - component: {fileID: 97637307}
   m_Layer: 0
   m_Name: 11212
   m_TagString: Untagged
@@ -1271,8 +1273,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97637297}
-  m_LocalRotation: {x: -0.00000072474165, y: -0.0005564147, z: 0.000022547249, w: 0.9999999}
-  m_LocalPosition: {x: 0.79911333, y: 0.000037162994, z: 0.8008895}
+  m_LocalRotation: {x: 0.0015658423, y: 0.9999986, z: 0.000050330986, w: 0.0005564089}
+  m_LocalPosition: {x: -0.79990375, y: 0.002585712, z: -0.80091465}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1414,6 +1416,65 @@ MonoBehaviour:
   m_Sense: 0
   m_SenseTag: 
   m_MouldingColour: 21
+--- !u!114 &97637306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97637297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b92c6a7f23c9e42b944ba743248bdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Scope: 1
+  m_IconPath: Assets/LEGO/Gizmos/LEGO Behaviour Icons/Weapons.png
+  m_FlashColour: {r: 0.6901961, g: 1.3411765, b: 0.50980395, a: 2}
+  m_Brick: {fileID: 97637299}
+  m_BrickPivotOffset: {x: -0.79986155, y: 0.2488772, z: -0.79999506}
+  m_Audio: {fileID: 0}
+  m_AudioVolume: 1
+  m_WeaponsData: {fileID: 11400000, guid: f497008379c239d41af691643936dc4f, type: 2}
+  m_Variable: {fileID: 11400000, guid: 9261f9ea2e9216c46ad193ed9d1a494b, type: 2}
+  m_SpeechBubbleInfo:
+    Type: 3
+    Text: You're not enough cost
+  m_SpeechBubblePromptPrefab: {fileID: 2153783478792524732, guid: 8f2336181d72ea740bdf64bb1cd14b33,
+    type: 3}
+--- !u!114 &97637307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97637297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 081d8ca064934e844932583ec77ff51a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Scope: 1
+  m_IconPath: Assets/LEGO/Gizmos/LEGO Behaviour Icons/Input Trigger.png
+  m_FlashColour: {r: 1.6, g: 1.4509804, b: 1.1058824, a: 2}
+  m_Brick: {fileID: 97637299}
+  m_BrickPivotOffset: {x: -0.79986155, y: 0.2488772, z: -0.79999506}
+  Progress: 0
+  Goal: 0
+  m_Conditions: []
+  m_Target: 0
+  m_SpecificTargetActions: []
+  m_Repeat: 1
+  m_Sense: 0
+  m_SenseTag: 
+  m_Type: 8
+  m_OtherKey: 101
+  m_Trigger: 0
+  m_Enable: 1
+  m_Distance: 3
+  m_ShowPrompt: 1
+  m_InputPromptPrefab: {fileID: 2153783478792524732, guid: 35eacb06a69ff44438ed7eb355e722c3,
+    type: 3}
 --- !u!1 &98674407
 GameObject:
   m_ObjectHideFlags: 0
@@ -3619,8 +3680,8 @@ GameObject:
   - component: {fileID: 278429566}
   - component: {fileID: 278429565}
   - component: {fileID: 278429570}
-  - component: {fileID: 278429571}
   - component: {fileID: 278429572}
+  - component: {fileID: 278429573}
   m_Layer: 0
   m_Name: 11212
   m_TagString: Untagged
@@ -3635,8 +3696,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278429562}
-  m_LocalRotation: {x: -0.00000072474165, y: -0.0005564147, z: 0.000022547249, w: 0.9999999}
-  m_LocalPosition: {x: 0.79911333, y: 0.000037162994, z: 0.8008895}
+  m_LocalRotation: {x: -0.001565842, y: -0.9999987, z: -0.00005034378, w: -0.0005563792}
+  m_LocalPosition: {x: -0.7999018, y: 0.0025871391, z: -0.80091465}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3778,59 +3839,6 @@ MonoBehaviour:
   m_Sense: 0
   m_SenseTag: 
   m_MouldingColour: 47
---- !u!114 &278429571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 278429562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4b92c6a7f23c9e42b944ba743248bdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Scope: 1
-  m_IconPath: Assets/LEGO/Gizmos/LEGO Behaviour Icons/Spawn Action.png
-  m_FlashColour: {r: 0.6901961, g: 1.3411765, b: 0.50980395, a: 2}
-  m_Brick: {fileID: 278429564}
-  m_BrickPivotOffset: {x: -0.79986167, y: 0.24887672, z: -0.79999506}
-  m_Audio: {fileID: 0}
-  m_AudioVolume: 1
-  m_Pause: 1
-  m_Repeat: 0
-  m_Model: {fileID: 0}
-  m_BrickSnapAudio: {fileID: 0}
-  m_Effect: {fileID: 0}
-  m_SpawnMethod: 0
-  m_SpawnAreaShape: 0
-  m_SpawnAreaCenter: {x: 0, y: 1, z: 0}
-  m_SpawnAreaSize: {x: 15, y: 15, z: 15}
-  m_SpawnAreaRadius: 15
-  m_SnapToGround: 1
-  m_SpawnOrientationType: 0
-  m_SpawnOrientation: {x: 0, y: 0, z: 0}
-  m_Collide: 1
-  m_BuildTime: 4
-  m_Variable: {fileID: 11400000, guid: 9261f9ea2e9216c46ad193ed9d1a494b, type: 2}
-  m_WeaponData:
-  - m_Prefab: {fileID: 3846875958539903425, guid: df545c2038b427540aa0f2cdc2fada2c,
-      type: 3}
-    m_name: Bonezai
-    m_Damage: 0
-    m_Range: 0
-    m_FireRate: 0
-    m_Price: 300
-    m_Icon: {fileID: 21300000, guid: 1b1aa16033f924a53ad3bc29b6be9737, type: 3}
-  - m_Prefab: {fileID: 3453703669066405961, guid: 47f7fa26c7d3b8345b5f8708e79e599c,
-      type: 3}
-    m_name: Bonezai
-    m_Damage: 0
-    m_Range: 0
-    m_FireRate: 0
-    m_Price: 500
-    m_Icon: {fileID: 21300000, guid: 54cd287d1f1d3a14da9e5bae68eb788a, type: 3}
-  m_ObjectiveWeapons: {fileID: 1170027628}
 --- !u!114 &278429572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3863,6 +3871,32 @@ MonoBehaviour:
   m_Distance: 5
   m_ShowPrompt: 1
   m_InputPromptPrefab: {fileID: 2153783478792524732, guid: 35eacb06a69ff44438ed7eb355e722c3,
+    type: 3}
+--- !u!114 &278429573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278429562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b92c6a7f23c9e42b944ba743248bdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Scope: 1
+  m_IconPath: Assets/LEGO/Gizmos/LEGO Behaviour Icons/Weapons.png
+  m_FlashColour: {r: 0.6901961, g: 1.3411765, b: 0.50980395, a: 2}
+  m_Brick: {fileID: 278429564}
+  m_BrickPivotOffset: {x: -0.79986167, y: 0.24887672, z: -0.79999506}
+  m_Audio: {fileID: 0}
+  m_AudioVolume: 1
+  m_WeaponsData: {fileID: 11400000, guid: f497008379c239d41af691643936dc4f, type: 2}
+  m_Variable: {fileID: 11400000, guid: 9261f9ea2e9216c46ad193ed9d1a494b, type: 2}
+  m_SpeechBubbleInfo:
+    Type: 3
+    Text: You're not enough cost
+  m_SpeechBubblePromptPrefab: {fileID: 2153783478792524732, guid: 8f2336181d72ea740bdf64bb1cd14b33,
     type: 3}
 --- !u!1 &295111275
 GameObject:
@@ -16297,18 +16331,6 @@ Transform:
   m_Father: {fileID: 2009844834}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1170027628 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6719992809685494027, guid: 1af62493038b00b42bb9849be7be7de1,
-    type: 3}
-  m_PrefabInstance: {fileID: 985286858}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7eb0696b8ac0d514c8cb3d1d0c82eac3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1172384078
 GameObject:
   m_ObjectHideFlags: 0
