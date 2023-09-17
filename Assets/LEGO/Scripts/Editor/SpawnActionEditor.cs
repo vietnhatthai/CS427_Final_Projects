@@ -22,6 +22,8 @@ namespace Unity.LEGO.EditorExt
         SerializedProperty m_SpawnOrientationProp;
         SerializedProperty m_CollideProp;
         SerializedProperty m_BuildTimeProp;
+        SerializedProperty m_WeaponsDataProp;
+        SerializedProperty m_ObjectiveWeaponsProp;
 
         static readonly Color s_BacksideColour = new Color(0.1f, 1.0f, 0.0f, 0.1f);
 
@@ -43,6 +45,8 @@ namespace Unity.LEGO.EditorExt
             m_SpawnOrientationProp = serializedObject.FindProperty("m_SpawnOrientation");
             m_CollideProp = serializedObject.FindProperty("m_Collide");
             m_BuildTimeProp = serializedObject.FindProperty("m_BuildTime");
+            m_WeaponsDataProp = serializedObject.FindProperty("m_WeaponData");
+            m_ObjectiveWeaponsProp = serializedObject.FindProperty("m_ObjectiveWeapons");
         }
 
         protected override void CreateGUI()
@@ -52,21 +56,32 @@ namespace Unity.LEGO.EditorExt
 
             EditorGUI.BeginDisabledGroup(EditorApplication.isPlaying);
 
-            if (m_ModelProp.objectReferenceValue == null)
+            if (m_WeaponsDataProp != null)
             {
-                EditorGUILayout.HelpBox("No model selected to spawn.", MessageType.Warning);
+                EditorGUILayout.PropertyField(m_WeaponsDataProp);
+                if (m_ObjectiveWeaponsProp != null)
+                    EditorGUILayout.PropertyField(m_ObjectiveWeaponsProp);
             }
             else
             {
-                var modelGO = (GameObject)m_ModelProp.objectReferenceValue;
-                if (!modelGO.GetComponent<Model>() && !modelGO.GetComponent<ModelGroup>() && !modelGO.GetComponent<Brick>())
+
+                if (m_ModelProp.objectReferenceValue == null)
                 {
-                    EditorGUILayout.HelpBox("Only LEGO models can be selected to spawn.", MessageType.Warning);
+                    EditorGUILayout.HelpBox("No model selected to spawn.", MessageType.Warning);
                 }
+                else
+                {
+                    var modelGO = (GameObject)m_ModelProp.objectReferenceValue;
+                    if (!modelGO.GetComponent<Model>() && !modelGO.GetComponent<ModelGroup>() && !modelGO.GetComponent<Brick>())
+                    {
+                        EditorGUILayout.HelpBox("Only LEGO models can be selected to spawn.", MessageType.Warning);
+                    }
+                }
+
+                // Only allow non-scene objects to be assigned.
+                m_ModelProp.objectReferenceValue = EditorGUILayout.ObjectField(new GUIContent("LEGO Model", "The LEGO model to spawn. Only prefabs are allowed."), m_ModelProp.objectReferenceValue, typeof(GameObject), false);
             }
 
-            // Only allow non-scene objects to be assigned.
-            m_ModelProp.objectReferenceValue = EditorGUILayout.ObjectField(new GUIContent("LEGO Model", "The LEGO model to spawn. Only prefabs are allowed."), m_ModelProp.objectReferenceValue, typeof(GameObject), false);
             EditorGUILayout.PropertyField(m_SpawnMethodProp);
 
             if ((SpawnAction.SpawnMethod)m_SpawnMethodProp.enumValueIndex != SpawnAction.SpawnMethod.Appear)

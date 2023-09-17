@@ -12,12 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7231e8df50e16c74c979c4a2affab91b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Completed:
+    m_PersistentCalls:
+      m_Calls: []
+  Invalidated:
+    m_PersistentCalls:
+      m_Calls: []
+  isTesting: 0
   m_Callback:
     _target: {fileID: 11400000, guid: 9d534143125290d4a8bd3a06aa687f86, type: 2}
     _methodName: HasShootBrickBeenConnectedToGalo
     _args: []
     _dynamic: 0
-    _typeName: Unity.InteractiveTutorials.ArbitraryCriterion+BoolCallback, Unity.InteractiveTutorials.Core,
+    _typeName: Unity.Tutorials.Core.Editor.ArbitraryCriterion+BoolCallback, Unity.Tutorials.Core.Editor,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
     dirty: 0
   m_AutoCompleteCallback:
@@ -25,7 +32,7 @@ MonoBehaviour:
     _methodName: 
     _args: []
     _dynamic: 0
-    _typeName: Unity.InteractiveTutorials.ArbitraryCriterion+BoolCallback, Unity.InteractiveTutorials.Core,
+    _typeName: Unity.Tutorials.Core.Editor.ArbitraryCriterion+BoolCallback, Unity.Tutorials.Core.Editor,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
     dirty: 0
 --- !u!114 &11400000
@@ -40,6 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff771ccdf4150419d9ff4d342b069aae, type: 3}
   m_Name: Enemy 25
   m_EditorClassIdentifier: 
+  Title:
+    m_Untranslated: Connect the Shoot brick
   m_Paragraphs:
     m_Items:
     - m_Type: 7
@@ -47,14 +56,7 @@ MonoBehaviour:
         m_Untranslated: 
       Text:
         m_Untranslated: 
-      m_Summary: 
-      m_Description: 
-      m_InstructionBoxTitle: 
-      m_InstructionText: 
-      m_TutorialButtonText: 
       m_Tutorial: {fileID: 0}
-      m_Icons:
-        m_Items: []
       m_Image: {fileID: 2800000, guid: 8f84f9b5c75ff42149c170ff10acc5e1, type: 3}
       m_Video: {fileID: 32900000, guid: 336002b6df21048bcb908fefaf873ed0, type: 3}
       m_CriteriaCompletion: 0
@@ -74,9 +76,14 @@ MonoBehaviour:
           m_MaskType: 0
           m_MaskSizeModifier: 0
           m_UnmaskedControls: []
+      m_Summary: 
+      m_Description: 
+      m_InstructionBoxTitle: 
+      m_InstructionText: 
+      m_TutorialButtonText: 
     - m_Type: 0
       Title:
-        m_Untranslated: Connect the Shoot brick
+        m_Untranslated: 
       Text:
         m_Untranslated: "Next, you'll connect the Shoot brick to the bird. Before
           you do, review the LEGO\xAE Tools in the top left of the Scene view and
@@ -84,14 +91,7 @@ MonoBehaviour:
           Brick Selection is set to Single Brick (second button)\n\n<b>Tips:</b>\n\n\u2022
           The <b>Shoot</b> brick direction is shown by the icon and hole in the brick.\n\n\u2022
           Use the arrow icons (Gizmo) if you need to rotate the brick."
-      m_Summary: 
-      m_Description: 
-      m_InstructionBoxTitle: 
-      m_InstructionText: 
-      m_TutorialButtonText: 
       m_Tutorial: {fileID: 0}
-      m_Icons:
-        m_Items: []
       m_Image: {fileID: 0}
       m_Video: {fileID: 0}
       m_CriteriaCompletion: 0
@@ -100,6 +100,11 @@ MonoBehaviour:
       m_MaskingSettings:
         m_MaskingEnabled: 0
         m_UnmaskedViews: []
+      m_Summary: 
+      m_Description: 
+      m_InstructionBoxTitle: 
+      m_InstructionText: 
+      m_TutorialButtonText: 
     - m_Type: 1
       Title:
         m_Untranslated: Connect the Behaviour Brick
@@ -107,26 +112,24 @@ MonoBehaviour:
         m_Untranslated: "<b>1.</b> Move the <b>Shoot</b> brick onto the bird \u2014
           it will snap to show you where it can connect.\n\n<b>2.</b> Click to connect
           the brick to the bird."
-      m_Summary: 
-      m_Description: 
-      m_InstructionBoxTitle: 
-      m_InstructionText: 
-      m_TutorialButtonText: 
       m_Tutorial: {fileID: 0}
-      m_Icons:
-        m_Items: []
       m_Image: {fileID: 0}
       m_Video: {fileID: 0}
       m_CriteriaCompletion: 0
       m_Criteria:
         m_Items:
-        - type:
-            m_TypeName: Unity.InteractiveTutorials.ArbitraryCriterion, Unity.InteractiveTutorials.Core,
+        - Type:
+            m_TypeName: Unity.Tutorials.Core.Editor.ArbitraryCriterion, Unity.Tutorials.Core.Editor,
               Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-          criterion: {fileID: -5591373162958549994}
+          Criterion: {fileID: -5591373162958549994}
       m_MaskingSettings:
         m_MaskingEnabled: 0
         m_UnmaskedViews: []
+      m_Summary: 
+      m_Description: 
+      m_InstructionBoxTitle: 
+      m_InstructionText: 
+      m_TutorialButtonText: 
   m_CameraSettings:
     m_CameraMode: 1
     m_FocusMode: 0
@@ -147,10 +150,26 @@ MonoBehaviour:
     m_Untranslated: Next
   DoneButton:
     m_Untranslated: Done
-  m_NextButton: 
-  m_DoneButton: 
   m_CompletedSound: {fileID: 8300000, guid: 93fbb109633e844259ea828442bda0cb, type: 3}
-  m_autoAdvance: 0
+  m_AutoAdvance: 0
+  Showing:
+    m_PersistentCalls:
+      m_Calls: []
+  Shown:
+    m_PersistentCalls:
+      m_Calls: []
+  Staying:
+    m_PersistentCalls:
+      m_Calls: []
+  CriteriaValidated:
+    m_PersistentCalls:
+      m_Calls: []
+  MaskingSettingsChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  NonMaskingSettingsChanged:
+    m_PersistentCalls:
+      m_Calls: []
   m_OnBeforePageShown:
     m_PersistentCalls:
       m_Calls:
@@ -169,9 +188,11 @@ MonoBehaviour:
   m_OnAfterPageShown:
     m_PersistentCalls:
       m_Calls: []
-  m_OnBeforeTutorialQuit:
-    m_PersistentCalls:
-      m_Calls: []
   m_OnTutorialPageStay:
     m_PersistentCalls:
       m_Calls: []
+  m_OnBeforeTutorialQuit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_NextButton: 
+  m_DoneButton: 

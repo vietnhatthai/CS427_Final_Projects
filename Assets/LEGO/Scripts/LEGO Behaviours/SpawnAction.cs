@@ -72,7 +72,7 @@ namespace Unity.LEGO.Behaviours.Actions
         [SerializeField, Tooltip("The time in seconds to build the spawned LEGO model.")]
         float m_BuildTime = 4.0f;
 
-        enum State
+        protected enum State
         {
             Spawning,
             Building,
@@ -80,7 +80,7 @@ namespace Unity.LEGO.Behaviours.Actions
             Waiting
         }
 
-        State m_State;
+        protected State m_State;
 
         AnimationCurve m_SpawnCurve = new AnimationCurve( new Keyframe[] { new Keyframe(0.0f, 0.0f, 0.0f, 0.0f), new Keyframe(1.0f, 1.0f, 2.0f, 2.0f) } );
         AnimationCurve m_AnimationTimeCurve = AnimationCurve.Linear(0.0f, 1.0f, 1.0f, 0.5f);
@@ -700,7 +700,7 @@ namespace Unity.LEGO.Behaviours.Actions
                 yield return new WaitForEndOfFrame();
             }
         }
-
+        
         void PlayAudio()
         {
             var audioSource = PlayAudio(false, true, false, false, false);
@@ -902,6 +902,12 @@ namespace Unity.LEGO.Behaviours.Actions
                     m_ModelCopy.transform.localScale = Vector3.one;
                 }
             }
+        }
+
+        protected void ChangeModel(GameObject model)
+        {
+            m_Model = model;
+            Start();
         }
     }
 }
