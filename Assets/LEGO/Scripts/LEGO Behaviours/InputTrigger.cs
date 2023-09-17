@@ -23,7 +23,7 @@ namespace Unity.LEGO.Behaviours.Triggers
         [SerializeField, Tooltip("The input to detect.")]
         Type m_Type = Type.OtherKey;
 
-        enum Key
+        public enum Key
         {
             A = KeyCode.A,
             B = KeyCode.B,
@@ -54,7 +54,7 @@ namespace Unity.LEGO.Behaviours.Triggers
         }
 
         [SerializeField, Tooltip("The key to detect.")]
-        Key m_OtherKey = Key.E;
+        public Key m_OtherKey = Key.E;
 
         public enum Trigger
         {
@@ -385,6 +385,15 @@ namespace Unity.LEGO.Behaviours.Triggers
                     }
                 }
             }
+        }
+
+        public void UpdatePrompt()
+        {
+            // Create prompt label.
+            var label = m_Type <= Type.Fire3 ? Enum.GetName(typeof(Type), m_Type) : m_OtherKey.ToString();
+            string New_m_PromptLabel = m_Type >= Type.Fire1 && m_Type <= Type.Fire3 ? label.Insert(4, " ") : label;
+            m_InputPrompt.UpdateLabel(m_PromptLabel, New_m_PromptLabel);
+            m_PromptLabel = New_m_PromptLabel;
         }
 
         void OnDestroy()

@@ -1,8 +1,8 @@
 using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "WeaponsData", menuName = "Weapons Data", order = 1)]
-public class ConfigWeapons : ScriptableObject 
+[CreateAssetMenu(fileName = "WeaponsData", menuName = "Weapons Data")]
+public class ConfigWeapons : ScriptableObject
 {
     public WeaponData[] weapons;
 
