@@ -187,8 +187,10 @@ namespace Unity.LEGO.Behaviours.Actions
             }
         }
 
-        private void OnDrawGizmos()
+        protected override void OnDrawGizmos()
         {
+            base.OnDrawGizmos();
+
             Gizmos.color = Color.red;
             Gizmos.DrawRay(transform.position, transform.rotation * Quaternion.Euler(m_Rotation) * Vector3.forward * 2);
             Gizmos.color = Color.green;
