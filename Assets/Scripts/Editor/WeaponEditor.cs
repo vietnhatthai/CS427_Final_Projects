@@ -20,6 +20,7 @@ namespace Unity.LEGO.EditorExt
         SerializedProperty m_VariableProp;
         SerializedProperty m_SpeechBubbleInfoProp;
         SerializedProperty m_SpeechBubblePromptPrefabProp;
+        SerializedProperty m_SpawnRotationProp;
 
         protected override void OnEnable()
         {
@@ -31,6 +32,7 @@ namespace Unity.LEGO.EditorExt
             m_VariableProp = serializedObject.FindProperty("m_Variable");
             m_SpeechBubbleInfoProp = serializedObject.FindProperty("m_SpeechBubbleInfo");
             m_SpeechBubblePromptPrefabProp = serializedObject.FindProperty("m_SpeechBubblePromptPrefab");
+            m_SpawnRotationProp = serializedObject.FindProperty("m_Rotation");
         }
 
         protected override void CreateGUI()
@@ -38,7 +40,11 @@ namespace Unity.LEGO.EditorExt
             EditorGUI.BeginDisabledGroup(EditorApplication.isPlaying);
 
             EditorGUILayout.PropertyField(m_WeaponsDataProp);
+
+            EditorGUILayout.PropertyField(m_SpawnRotationProp);
+
             EditorGUILayout.PropertyField(m_SpeechBubbleInfoProp);
+            
             EditorGUILayout.PropertyField(m_SpeechBubblePromptPrefabProp);
 
             if (m_VariableProp == null)
