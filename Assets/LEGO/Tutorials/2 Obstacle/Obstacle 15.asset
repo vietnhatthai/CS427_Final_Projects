@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff771ccdf4150419d9ff4d342b069aae, type: 3}
   m_Name: Obstacle 15
   m_EditorClassIdentifier: 
+  Title:
+    m_Untranslated: Rotate the platform
   m_Paragraphs:
     m_Items:
     - m_Type: 7
@@ -19,14 +21,7 @@ MonoBehaviour:
         m_Untranslated: 
       Text:
         m_Untranslated: 
-      m_Summary: 
-      m_Description: 
-      m_InstructionBoxTitle: 
-      m_InstructionText: 
-      m_TutorialButtonText: 
       m_Tutorial: {fileID: 0}
-      m_Icons:
-        m_Items: []
       m_Image: {fileID: 2800000, guid: a92f4d81580364ddfbd60a09de9996bb, type: 3}
       m_Video: {fileID: 32900000, guid: 42d4808c22d722444a8a53bd9bc716e2, type: 3}
       m_CriteriaCompletion: 0
@@ -60,6 +55,7 @@ MonoBehaviour:
           m_MaskSizeModifier: 0
           m_UnmaskedControls:
           - m_SelectorMode: 1
+            m_SelectorMatchType: 0
             m_GUIContent:
               m_Text: 
               m_Image: {fileID: 0}
@@ -79,9 +75,17 @@ MonoBehaviour:
                 m_AssetObject: {fileID: 0}
                 m_Prefab: {fileID: 0}
               m_FutureObjectReference: {fileID: 0}
+            m_VisualElementClassName: 
+            m_VisualElementName: 
+            m_VisualElementTypeName: 
+      m_Summary: 
+      m_Description: 
+      m_InstructionBoxTitle: 
+      m_InstructionText: 
+      m_TutorialButtonText: 
     - m_Type: 0
       Title:
-        m_Untranslated: Rotate the platform
+        m_Untranslated: 
       Text:
         m_Untranslated: "When you select the Rotate Tool, three colored circles appear
           around the platform in a sphere. This is the <b>Rotate Gizmo</b> (graphic
@@ -89,14 +93,7 @@ MonoBehaviour:
           is red\n\u2022 the y-axis is green\n\u2022 the z-axis is blue\n\n<b>Tip:</b>
           To align your platform, you\u2019ll probably need to use the <b>green y-axis
           circle</b>."
-      m_Summary: 
-      m_Description: 
-      m_InstructionBoxTitle: 
-      m_InstructionText: 
-      m_TutorialButtonText: 
       m_Tutorial: {fileID: 0}
-      m_Icons:
-        m_Items: []
       m_Image: {fileID: 0}
       m_Video: {fileID: 0}
       m_CriteriaCompletion: 0
@@ -105,6 +102,11 @@ MonoBehaviour:
       m_MaskingSettings:
         m_MaskingEnabled: 0
         m_UnmaskedViews: []
+      m_Summary: 
+      m_Description: 
+      m_InstructionBoxTitle: 
+      m_InstructionText: 
+      m_TutorialButtonText: 
     - m_Type: 1
       Title:
         m_Untranslated: Align your platform
@@ -114,37 +116,32 @@ MonoBehaviour:
 
 
           Select <b>Next</b> to continue.'
-      m_Summary: 
-      m_Description: 
-      m_InstructionBoxTitle: 
-      m_InstructionText: 
-      m_TutorialButtonText: 
       m_Tutorial: {fileID: 0}
-      m_Icons:
-        m_Items: []
       m_Image: {fileID: 0}
       m_Video: {fileID: 0}
       m_CriteriaCompletion: 1
       m_Criteria:
         m_Items:
-        - type:
-            m_TypeName: Unity.InteractiveTutorials.PropertyModificationCriterion,
-              Unity.InteractiveTutorials.Core, Version=0.0.0.0, Culture=neutral,
-              PublicKeyToken=null
-          criterion: {fileID: 492818188702588706}
-        - type:
-            m_TypeName: Unity.InteractiveTutorials.PropertyModificationCriterion,
-              Unity.InteractiveTutorials.Core, Version=0.0.0.0, Culture=neutral,
-              PublicKeyToken=null
-          criterion: {fileID: 3747712431106907824}
-        - type:
-            m_TypeName: Unity.InteractiveTutorials.PropertyModificationCriterion,
-              Unity.InteractiveTutorials.Core, Version=0.0.0.0, Culture=neutral,
-              PublicKeyToken=null
-          criterion: {fileID: 5175214125465240644}
+        - Type:
+            m_TypeName: Unity.Tutorials.Core.Editor.PropertyModificationCriterion,
+              Unity.Tutorials.Core.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+          Criterion: {fileID: 492818188702588706}
+        - Type:
+            m_TypeName: Unity.Tutorials.Core.Editor.PropertyModificationCriterion,
+              Unity.Tutorials.Core.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+          Criterion: {fileID: 3747712431106907824}
+        - Type:
+            m_TypeName: Unity.Tutorials.Core.Editor.PropertyModificationCriterion,
+              Unity.Tutorials.Core.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+          Criterion: {fileID: 5175214125465240644}
       m_MaskingSettings:
         m_MaskingEnabled: 0
         m_UnmaskedViews: []
+      m_Summary: 
+      m_Description: 
+      m_InstructionBoxTitle: 
+      m_InstructionText: 
+      m_TutorialButtonText: 
   m_CameraSettings:
     m_CameraMode: 1
     m_FocusMode: 0
@@ -165,15 +162,13 @@ MonoBehaviour:
     m_Untranslated: Next
   DoneButton:
     m_Untranslated: Done
-  m_NextButton: 
-  m_DoneButton: 
   m_CompletedSound: {fileID: 8300000, guid: 93fbb109633e844259ea828442bda0cb, type: 3}
-  m_autoAdvance: 0
-  m_OnBeforePageShown:
+  m_AutoAdvance: 0
+  Showing:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 743fc35f8da11d34ca3ef73a7c5ccdaa, type: 2}
-        m_TargetAssemblyTypeName: Unity.LEGO.Tutorials.TutorialCallbacks, Unity.LEGO.Tutorials
+        m_TargetAssemblyTypeName: 
         m_MethodName: DisableBrickBuildingTool
         m_Mode: 1
         m_Arguments:
@@ -185,7 +180,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 1
       - m_Target: {fileID: 11400000, guid: 743fc35f8da11d34ca3ef73a7c5ccdaa, type: 2}
-        m_TargetAssemblyTypeName: Unity.LEGO.Tutorials.TutorialCallbacks, Unity.LEGO.Tutorials
+        m_TargetAssemblyTypeName: 
         m_MethodName: KeepPlatformSelected
         m_Mode: 1
         m_Arguments:
@@ -196,27 +191,47 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+  Shown:
+    m_PersistentCalls:
+      m_Calls: []
+  Staying:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 743fc35f8da11d34ca3ef73a7c5ccdaa, type: 2}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: KeepPlatformSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  CriteriaValidated:
+    m_PersistentCalls:
+      m_Calls: []
+  MaskingSettingsChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  NonMaskingSettingsChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnBeforePageShown:
+    m_PersistentCalls:
+      m_Calls: []
   m_OnAfterPageShown:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnTutorialPageStay:
     m_PersistentCalls:
       m_Calls: []
   m_OnBeforeTutorialQuit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnTutorialPageStay:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 743fc35f8da11d34ca3ef73a7c5ccdaa, type: 2}
-        m_TargetAssemblyTypeName: Unity.LEGO.Tutorials.TutorialCallbacks, Unity.LEGO.Tutorials
-        m_MethodName: KeepPlatformSelected
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+  m_NextButton: 
+  m_DoneButton: 
 --- !u!114 &492818188702588706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -229,6 +244,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e52eaa6fdf2a4794ba81c7bc450905e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Completed:
+    m_PersistentCalls:
+      m_Calls: []
+  Invalidated:
+    m_PersistentCalls:
+      m_Calls: []
+  isTesting: 0
   m_PropertyPath: m_LocalRotation.x
   m_TargetValueMode: 1
   m_TargetValue: 
@@ -256,6 +278,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e52eaa6fdf2a4794ba81c7bc450905e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Completed:
+    m_PersistentCalls:
+      m_Calls: []
+  Invalidated:
+    m_PersistentCalls:
+      m_Calls: []
+  isTesting: 0
   m_PropertyPath: m_LocalRotation.y
   m_TargetValueMode: 1
   m_TargetValue: 
@@ -283,6 +312,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e52eaa6fdf2a4794ba81c7bc450905e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Completed:
+    m_PersistentCalls:
+      m_Calls: []
+  Invalidated:
+    m_PersistentCalls:
+      m_Calls: []
+  isTesting: 0
   m_PropertyPath: m_LocalRotation.z
   m_TargetValueMode: 1
   m_TargetValue: 
