@@ -17,6 +17,10 @@ namespace Unity.LEGO.Behaviours.Actions
         [SerializeField, Tooltip("The variable to modify.")]
         private Game.Variable m_Variable;
 
+        // setting rotation
+        [SerializeField, Tooltip("The rotation.")]
+        private Vector3 m_Rotation;
+
         [SerializeField]
         BubbleInfo m_SpeechBubbleInfo = new BubbleInfo
         {
@@ -73,12 +77,10 @@ namespace Unity.LEGO.Behaviours.Actions
 
                 VariableManager.SetValue(m_Variable, remaining);
                 instant = Instantiate(m_ObjectToSpawn, m_CurrentObject.transform.position, m_CurrentObject.transform.rotation);
-                instant.transform.parent = m_CurrentObject.transform.parent;
-                instant.transform.localScale = m_CurrentObject.transform.localScale;
-                instant.transform.localRotation = m_CurrentObject.transform.localRotation;
-                instant.transform.localPosition = m_CurrentObject.transform.localPosition;
-                instant.transform.localEulerAngles = m_CurrentObject.transform.localEulerAngles;
-                instant.transform.parent = null;
+
+                // Rotate the object relative to the parent
+                instant.transform.rotation = m_CurrentObject.transform.rotation * Quaternion.Euler(m_Rotation);
+
                 m_CurrentObject.GetComponent<InputTrigger>().m_OtherKey = InputTrigger.Key.Q;
                 m_CurrentObject.GetComponent<InputTrigger>().UpdatePrompt();
             }
@@ -183,6 +185,16 @@ namespace Unity.LEGO.Behaviours.Actions
                     m_SpeechBubblePrompt.Deactivate(m_Id);
                 }
             }
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawRay(transform.position, transform.rotation * Quaternion.Euler(m_Rotation) * Vector3.forward * 2);
+            Gizmos.color = Color.green;
+            Gizmos.DrawRay(transform.position, transform.rotation * Quaternion.Euler(m_Rotation) * Vector3.up * 2);
+            Gizmos.color = Color.blue;
+            Gizmos.DrawRay(transform.position, transform.rotation * Quaternion.Euler(m_Rotation) * Vector3.right * 2);
         }
     }
 }
