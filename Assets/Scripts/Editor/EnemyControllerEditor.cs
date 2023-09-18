@@ -1,7 +1,6 @@
 using UnityEditor;
 using UnityEngine;
 using Unity.LEGO.Behaviours.Actions;
-using LEGOModelImporter;
 using System.IO;
 using Unity.LEGO.Game;
 
@@ -14,6 +13,7 @@ namespace Unity.LEGO.EditorExt
         Editor m_VariableEditor;
 
         SerializedProperty m_VariableProp;
+        SerializedProperty m_CostVariableProp;
         SerializedProperty m_EnemySettingsProp;
         SerializedProperty m_SpawnMethodProp;
         SerializedProperty m_EffectProp;
@@ -36,6 +36,7 @@ namespace Unity.LEGO.EditorExt
             m_EnemyController = (EnemyController)m_Action;
 
             m_VariableProp = serializedObject.FindProperty("m_Variable");
+            m_CostVariableProp = serializedObject.FindProperty("m_CostVariable");
             m_EnemySettingsProp = serializedObject.FindProperty("m_EnemySettings");
             m_SpawnMethodProp = serializedObject.FindProperty("m_SpawnMethod");
             m_EffectProp = serializedObject.FindProperty("m_Effect");
@@ -143,6 +144,58 @@ namespace Unity.LEGO.EditorExt
                     if (GUILayout.Button("Delete Variable"))
                     {
                         AssetDatabase.DeleteAsset(variables.Item3[index]);
+                    }
+                }
+            }
+
+            EditorGUI.EndDisabledGroup();
+
+            EditorGUI.BeginDisabledGroup(EditorApplication.isPlaying);
+
+            if (m_VariableProp == null)
+            {
+                EditorGUI.EndDisabledGroup();
+                return;
+            }
+
+            // Refresh variable list.
+            var costVariables = GetAvailableVariables();
+            costVariables.Item2.Add("[Add New Variable]");
+
+            // Update variable index.
+            var costIndex = costVariables.Item1.FindIndex(item => item == (Variable)m_CostVariableProp.objectReferenceValue);
+
+            costIndex = EditorGUILayout.Popup(new GUIContent("Variable", "The variable to modify."), costIndex, variables.Item2.ToArray());
+
+            if (costIndex > -1)
+            {
+                DrawSeparator();
+                EditorGUILayout.LabelField("Variable Settings", EditorStyles.boldLabel);
+
+                if (index == costVariables.Item2.Count - 1)
+                {
+                    var newVariable = CreateInstance<Variable>();
+                    newVariable.Name = "Variable (Cost)";
+                    var newVariableAssetPath = AssetDatabase.GenerateUniqueAssetPath(Path.Combine(VariableManager.k_VariablePath, "Variable.asset"));
+                    AssetDatabase.CreateAsset(newVariable, newVariableAssetPath);
+                    m_CostVariableProp.objectReferenceValue = newVariable;
+                }
+                else
+                {
+                    m_CostVariableProp.objectReferenceValue = costVariables.Item1[costIndex];
+
+                    // Only recreate editor if necessary.
+                    if (!m_VariableEditor || m_VariableEditor.target != m_CostVariableProp.objectReferenceValue)
+                    {
+                        DestroyImmediate(m_VariableEditor);
+                        m_VariableEditor = CreateEditor(m_CostVariableProp.objectReferenceValue);
+                    }
+
+                    m_VariableEditor.OnInspectorGUI();
+
+                    if (GUILayout.Button("Delete Variable"))
+                    {
+                        AssetDatabase.DeleteAsset(costVariables.Item3[costIndex]);
                     }
                 }
             }

@@ -30,12 +30,19 @@ namespace Unity.LEGO.Behaviours.Actions
         [SerializeField, Range(0.0f, 80.0f)]
         float m_Gravity = 40;
 
-        [SerializeField, Tooltip("The variable to modify.")]
-        public Game.Variable m_Variable = default;
+        [SerializeField, Tooltip("The variable to minus one from when the enemy is destroyed.")]
+        public Game.Variable m_MinusVariable = default;
+
+        [SerializeField, Tooltip("The variable to bonus when the enemy is destroyed.")]
+        public Game.Variable m_BonusVariable = default;
 
         int waypointIndex = 0;
         private WaypointManager m_WaypointManager;
         bool m_Detonated;
+
+        public string m_Name = "Enemy";
+        public int m_Bonus = 0;
+        public int m_Health = 100;
 
         ControlMovement m_ControlMovement;
         List<LEGOBehaviour> m_Behaviours = new List<LEGOBehaviour>();
@@ -215,10 +222,12 @@ namespace Unity.LEGO.Behaviours.Actions
                 // Delay destruction of LEGOBehaviours one frame to allow multiple Explode Actions to detonate.
                 m_Detonated = true;
 
-                if (VariableManager.GetValue(m_Variable) > 0)
+                if (VariableManager.GetValue(m_MinusVariable) > 0)
                 {
-                    VariableManager.SetValue(m_Variable, VariableManager.GetValue(m_Variable) - 1);
+                    VariableManager.SetValue(m_MinusVariable, VariableManager.GetValue(m_MinusVariable) - 1);
                 }
+
+                VariableManager.SetValue(m_BonusVariable, VariableManager.GetValue(m_BonusVariable) + m_Bonus);
             }
             else
             {

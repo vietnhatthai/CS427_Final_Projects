@@ -35,8 +35,11 @@ namespace Unity.LEGO.Behaviours.Actions
             RandomZAxis
         }
 
-        [SerializeField, Tooltip("The variable to modify.")]
+        [SerializeField, Tooltip("The variable to modify when the enemy is destroyed.")]
         Game.Variable m_Variable = default;
+
+        [SerializeField, Tooltip("The variable to bonus when the enemy is destroyed.")]
+        Game.Variable m_CostVariable = default;
 
         [SerializeField, Tooltip("Enemy Settings")]
         EnemySettings m_EnemySettings = null;
@@ -677,8 +680,12 @@ namespace Unity.LEGO.Behaviours.Actions
             {
                 if (behaviour.GetType() == typeof(EnemyMoveAction))
                 {
-                    behaviour.GetComponent<EnemyMoveAction>().m_Variable = m_Variable;
+                    behaviour.GetComponent<EnemyMoveAction>().m_MinusVariable = m_Variable;
+                    behaviour.GetComponent<EnemyMoveAction>().m_BonusVariable = m_CostVariable;
                     behaviour.GetComponent<EnemyMoveAction>().m_Speed = m_Speed;
+                    behaviour.GetComponent<EnemyMoveAction>().m_Bonus = m_Bonus;
+                    behaviour.GetComponent<EnemyMoveAction>().m_Name = m_Name;
+                    behaviour.GetComponent<EnemyMoveAction>().m_Health = m_Health;
                 }
             }
 

@@ -54,7 +54,6 @@ namespace Unity.LEGO.Behaviours.Triggers
             {
                 if (behaviour.GetType() == typeof(EnemyMoveAction))
                 {
-                    Debug.Log("EnemyTouchTrigger: EnemyMoveAction found");
                     behaviour.GetComponent<EnemyMoveAction>().ExplodeAction();
                 }
             }
