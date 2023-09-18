@@ -62,4 +62,19 @@ public class WaypointManager : MonoBehaviour
 
         Handles.zTest = prevZTest;
     }
+
+
+    public Vector3 GetWaypointPosition(int index)
+    {
+        if (index < 0 || index >= waypoints.Count)
+        {
+            return Vector3.zero;
+        }
+        return waypoints[index].transform.position;
+    }
+
+    public int Count()
+    {
+        return waypoints.Count;
+    }
 }
