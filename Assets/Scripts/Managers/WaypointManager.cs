@@ -36,8 +36,9 @@ public class WaypointManager : MonoBehaviour
                 continue;
             }
             Gizmos.color = Color.red;
-            //Gizmos.DrawLine(waypoints[i].transform.position, waypoints[i + 1].transform.position);
+
             DrawThickLine(waypoints[i].transform.position, waypoints[i + 1].transform.position, 1f);
+
         }
     }
 
@@ -51,7 +52,7 @@ public class WaypointManager : MonoBehaviour
         {
             return;
         }
-
+#if UNITY_EDITOR
         // Only draw the line when it is the closest thing to the camera
         // (Remove the Z-test code and other objects will not occlude the line.)
         var prevZTest = Handles.zTest;
@@ -61,6 +62,7 @@ public class WaypointManager : MonoBehaviour
         Handles.DrawAAPolyLine(thickness * 10, new Vector3[] { start, end });
 
         Handles.zTest = prevZTest;
+#endif
     }
 
 

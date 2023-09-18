@@ -47,7 +47,7 @@ namespace Unity.LEGO.Behaviours.Triggers
             }
         }
 
-        protected void SetupSensoryCollider(SensoryCollider collider)
+        protected new void SetupSensoryCollider(SensoryCollider collider)
         {
             collider.OnSensorActivated += SensoryColliderActivated;
             collider.OnSensorDeactivated += SensoryColliderDeactivated;
@@ -59,24 +59,28 @@ namespace Unity.LEGO.Behaviours.Triggers
             }
         }
 
-        protected void SensoryColliderActivated(SensoryCollider collider, Collider _)
+        protected new void SensoryColliderActivated(SensoryCollider collider, Collider _)
         {
             List<Part> parts = GetComponent<Brick>().parts;
             foreach (Part part in parts)
             {
                 part.materialIDs[0] = (int)m_MouldingColour;
             }
+#if UNITY_EDITOR
             GetComponent<Brick>().SetMaterial(false);
+#endif
         }
 
-        protected void SensoryColliderDeactivated(SensoryCollider collider)
+        protected new void SensoryColliderDeactivated(SensoryCollider collider)
         {
             List<Part> parts = GetComponent<Brick>().parts;
             for (int i = 0; i < parts.Count; i++)
             {
                 parts[i].materialIDs[0] = color_original[i];
             }
+#if UNITY_EDITOR
             GetComponent<Brick>().SetMaterial(false);
+#endif
         }
     }
 }
