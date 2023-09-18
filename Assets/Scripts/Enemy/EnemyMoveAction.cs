@@ -80,14 +80,16 @@ namespace Unity.LEGO.Behaviours.Actions
                     m_TargetDirection.Normalize();
 
                     // Move and rotate control movement.
-                    m_ControlMovement.Movement(m_TargetDirection, m_MinSpeed, m_MaxSpeed, m_IdleSpeed, 0, 0);
+                    //m_ControlMovement.Movement(m_TargetDirection, m_MinSpeed, m_MaxSpeed, m_IdleSpeed, 0, 0);
+
+                    m_Group.transform.position += m_TargetDirection * m_Speed * Time.deltaTime;
                     m_ControlMovement.Rotation(m_TargetDirection, m_RotationSpeed);
 
                     // Update model position.
                     m_MovementTracker.UpdateModelPosition();
 
                     // check if we have reached the target
-                    if (Vector3.Distance(currentPosition, targetPosition) < 1f)
+                    if (Vector3.Distance(currentPosition, targetPosition) < 3f)
                     {
                         waypointIndex++;
                     }
