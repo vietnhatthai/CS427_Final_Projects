@@ -598,6 +598,7 @@ GameObject:
   - component: {fileID: 8255179360661058584}
   - component: {fileID: 8953657309058561512}
   - component: {fileID: 6105073917642091490}
+  - component: {fileID: 9083463944483232390}
   m_Layer: 0
   m_Name: 15573
   m_TagString: Untagged
@@ -753,6 +754,8 @@ MonoBehaviour:
   m_Time: 2
   m_Collide: 1
   m_Speed: 15
+  m_Power: 10
+  m_RemoveBricks: 1
   m_MinSpeed: -20
   m_MaxSpeed: 20
   m_IdleSpeed: 0
@@ -760,6 +763,32 @@ MonoBehaviour:
   m_JumpSpeed: 20
   m_MaxJumpsInAir: 0
   m_Gravity: 40
+  m_Variable: {fileID: 0}
+--- !u!114 &9083463944483232390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266319565865372124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def53922fe98bb84d8a1b90bbb194e46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Scope: 1
+  m_IconPath: Assets/LEGO/Gizmos/LEGO Behaviour Icons/Touch Trigger.png
+  m_FlashColour: {r: 1.6, g: 1.4509804, b: 1.1058824, a: 2}
+  m_Brick: {fileID: 742402033662122123}
+  m_BrickPivotOffset: {x: -0.39996403, y: 0.24888174, z: -0.000011175871}
+  Progress: 0
+  Goal: 0
+  m_Conditions: []
+  m_Target: 0
+  m_SpecificTargetActions: []
+  m_Repeat: 1
+  m_Sense: 2
+  m_SenseTag: Projectile
 --- !u!1 &280046809654450711
 GameObject:
   m_ObjectHideFlags: 0

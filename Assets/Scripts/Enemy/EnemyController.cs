@@ -115,6 +115,10 @@ namespace Unity.LEGO.Behaviours.Actions
         float m_Time;
 
         float m_SpawnTime;
+        string m_Name;
+        int m_Health;
+        int m_Bonus;
+        int m_Speed;
 
         float m_BuildTimePerBrick;
         int m_NextBrickSpawnIndex;
@@ -228,6 +232,10 @@ namespace Unity.LEGO.Behaviours.Actions
                     SetupModelCopy(m_EnemyData[0].m_Prefab);
                     m_BuildTime = m_EnemyData[0].m_BuildTime;
                     m_Pause = m_EnemyData[0].m_WaitTime;
+                    m_Name = m_EnemyData[0].m_Name;
+                    m_Health = m_EnemyData[0].m_Health;
+                    m_Bonus = m_EnemyData[0].m_Bonus;
+                    m_Speed = m_EnemyData[0].m_Speed;
 
                     m_EnemyData.RemoveAt(0);
                 }
@@ -358,8 +366,12 @@ namespace Unity.LEGO.Behaviours.Actions
                             SetupModelCopy(m_EnemyData[0].m_Prefab);
                             m_BuildTime = m_EnemyData[0].m_BuildTime;
                             m_Pause = m_EnemyData[0].m_WaitTime;
+                            m_Name = m_EnemyData[0].m_Name;
+                            m_Health = m_EnemyData[0].m_Health;
+                            m_Bonus = m_EnemyData[0].m_Bonus;
+                            m_Speed = m_EnemyData[0].m_Speed;
                             m_EnemyData.RemoveAt(0);
-                        } 
+                        }
                         else
                         {
                             m_Repeat = false;
@@ -656,9 +668,19 @@ namespace Unity.LEGO.Behaviours.Actions
                 modelGO = modelWrapperGO;
             }
 
-            //modelGO.AddComponent<EnemyMoveAction>();
 
             BrickColliderCombiner.CombineColliders(modelGO);
+
+
+            var behaviours = modelGO.GetComponentsInChildren<LEGOBehaviour>();
+            foreach (var behaviour in behaviours)
+            {
+                if (behaviour.GetType() == typeof(EnemyMoveAction))
+                {
+                    behaviour.GetComponent<EnemyMoveAction>().m_Variable = m_Variable;
+                    behaviour.GetComponent<EnemyMoveAction>().m_Speed = m_Speed;
+                }
+            }
 
             return modelGO;
         }
