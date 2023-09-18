@@ -247,6 +247,9 @@ namespace Unity.LEGO.Behaviours.Actions
 
         private void SetupModelCopy(GameObject model)
         {
+            m_BrickCopies.Clear();
+            m_AnimatedBricks.Clear();
+
             if (m_ModelCopy != null)
             {
                 Destroy(m_ModelCopy);
