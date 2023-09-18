@@ -13805,13 +13805,24 @@ PrefabInstance:
     - target: {fileID: 5351750847045602245, guid: 0ad34d748b0f8584ab90acec1c11f21f,
         type: 3}
       propertyPath: m_Conditions.Array.size
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5351750847045602245, guid: 0ad34d748b0f8584ab90acec1c11f21f,
+        type: 3}
+      propertyPath: m_Conditions.Array.data[0].Value
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5351750847045602245, guid: 0ad34d748b0f8584ab90acec1c11f21f,
         type: 3}
       propertyPath: m_Conditions.Array.data[1].Value
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5351750847045602245, guid: 0ad34d748b0f8584ab90acec1c11f21f,
+        type: 3}
+      propertyPath: m_Conditions.Array.data[0].Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: cb2e8a8dded8dbd4faedf2d2c0333250,
+        type: 2}
     - target: {fileID: 5351750847045602245, guid: 0ad34d748b0f8584ab90acec1c11f21f,
         type: 3}
       propertyPath: m_Conditions.Array.data[1].Variable

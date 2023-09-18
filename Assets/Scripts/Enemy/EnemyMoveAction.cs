@@ -40,7 +40,6 @@ namespace Unity.LEGO.Behaviours.Actions
         private WaypointManager m_WaypointManager;
         bool m_Detonated;
 
-        public string m_Name = "Enemy";
         public int m_Bonus = 0;
         public int m_Health = 100;
 
