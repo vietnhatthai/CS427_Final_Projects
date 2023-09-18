@@ -94,12 +94,13 @@ namespace Unity.LEGO.Behaviours.Actions
             {
                 if (instant == null)
                 {
-                    weaponHUB.Show();
+                    weaponHUB.clean();
                     for (int i = 0; i < m_WeaponsData.weapons.Length; i++)
                     {
                         weaponHUB.AddWeapon(m_WeaponsData.GetWeapon(i).m_Icon, i);
                     }
                     weaponHUB.SelectWeapon += SelectWeaponHandler;
+                    weaponHUB.Show();
                 }
                 else
                 {
