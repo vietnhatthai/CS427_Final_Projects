@@ -2303,7 +2303,7 @@ GameObject:
   - component: {fileID: -5024062590513564286}
   m_Layer: 0
   m_Name: 30136
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5011,7 +5011,7 @@ GameObject:
   - component: {fileID: -4237176779985428617}
   m_Layer: 0
   m_Name: 35743
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8132,7 +8132,7 @@ GameObject:
   - component: {fileID: -7522434867153496749}
   m_Layer: 0
   m_Name: 3839
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9430,7 +9430,7 @@ GameObject:
   - component: {fileID: 5996366826901635004}
   m_Layer: 0
   m_Name: Mogosaur
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12069,7 +12069,7 @@ GameObject:
   - component: {fileID: -7171441510459214279}
   m_Layer: 0
   m_Name: 3001
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12430,7 +12430,7 @@ GameObject:
   - component: {fileID: -9111954671390246367}
   m_Layer: 0
   m_Name: 32607
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13213,7 +13213,7 @@ GameObject:
   - component: {fileID: 7285732152745254406}
   m_Layer: 0
   m_Name: 6141
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14112,7 +14112,7 @@ GameObject:
   - component: {fileID: 158898920170053497}
   m_Layer: 0
   m_Name: 3039
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14396,7 +14396,7 @@ GameObject:
   - component: {fileID: 3362352836918174196}
   m_Layer: 0
   m_Name: 11211
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14901,7 +14901,7 @@ GameObject:
   - component: {fileID: -3808115937807923026}
   m_Layer: 0
   m_Name: 3020
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15351,7 +15351,7 @@ GameObject:
   - component: {fileID: 2669512056478372198}
   m_Layer: 0
   m_Name: 35743
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20268,7 +20268,7 @@ GameObject:
   - component: {fileID: 7947615111148398797}
   m_Layer: 0
   m_Name: 30136
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20430,7 +20430,10 @@ MonoBehaviour:
   m_JumpSpeed: 20
   m_MaxJumpsInAir: 0
   m_Gravity: 40
-  m_Variable: {fileID: 0}
+  m_MinusVariable: {fileID: 0}
+  m_BonusVariable: {fileID: 0}
+  m_Bonus: 0
+  m_Health: 100
 --- !u!114 &7947615111148398797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24989,7 +24992,7 @@ GameObject:
   - component: {fileID: 612663329360507069}
   m_Layer: 0
   m_Name: 6141
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28296,6 +28299,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Alive
+      objectReference: {fileID: 0}
+    - target: {fileID: 5952549877573738461, guid: 14c411293fa3844dda7a44a1e006eb6c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6114003710898971273, guid: 14c411293fa3844dda7a44a1e006eb6c,
         type: 3}

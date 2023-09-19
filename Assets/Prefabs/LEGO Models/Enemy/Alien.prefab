@@ -779,7 +779,7 @@ GameObject:
   - component: {fileID: 4410305505865014813}
   m_Layer: 0
   m_Name: 6143
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -941,7 +941,10 @@ MonoBehaviour:
   m_JumpSpeed: 20
   m_MaxJumpsInAir: 0
   m_Gravity: 40
-  m_Variable: {fileID: 0}
+  m_MinusVariable: {fileID: 0}
+  m_BonusVariable: {fileID: 0}
+  m_Bonus: 0
+  m_Health: 100
 --- !u!114 &4410305505865014813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1150,7 +1153,7 @@ GameObject:
   - component: {fileID: -7943973708546197921}
   m_Layer: 0
   m_Name: 15571
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2711,7 +2714,7 @@ GameObject:
   - component: {fileID: 6059348787022829024}
   m_Layer: 0
   m_Name: 35388
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3683,7 +3686,7 @@ GameObject:
   - component: {fileID: 7746746774873070826}
   m_Layer: 0
   m_Name: 33320
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9949,7 +9952,7 @@ GameObject:
   - component: {fileID: 3945210119847382922}
   m_Layer: 0
   m_Name: Alien
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10686,7 +10689,7 @@ GameObject:
   - component: {fileID: -8615208596346174579}
   m_Layer: 0
   m_Name: 6141
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12174,7 +12177,7 @@ GameObject:
   - component: {fileID: 8204357319929930402}
   m_Layer: 0
   m_Name: 87580
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13354,7 +13357,7 @@ GameObject:
   - component: {fileID: 1970953805791623253}
   m_Layer: 0
   m_Name: 6141
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16862,7 +16865,7 @@ GameObject:
   - component: {fileID: 2352322583883457746}
   m_Layer: 0
   m_Name: 59900
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18031,7 +18034,7 @@ GameObject:
   - component: {fileID: 661060981840649566}
   m_Layer: 0
   m_Name: 6143
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18980,7 +18983,7 @@ GameObject:
   - component: {fileID: 3842838319278967758}
   m_Layer: 0
   m_Name: 35388
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21407,7 +21410,7 @@ GameObject:
   - component: {fileID: -7028473934362568753}
   m_Layer: 0
   m_Name: 59900
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23534,7 +23537,7 @@ GameObject:
   - component: {fileID: -3217882516708331489}
   m_Layer: 0
   m_Name: 15571
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28796,7 +28799,7 @@ GameObject:
   - component: {fileID: 3687329163716347739}
   m_Layer: 0
   m_Name: 60474
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30687,7 +30690,7 @@ GameObject:
   - component: {fileID: 3610814897199615523}
   m_Layer: 0
   m_Name: 15571
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31981,7 +31984,7 @@ GameObject:
   - component: {fileID: -5057683116123325068}
   m_Layer: 0
   m_Name: 4590
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33246,6 +33249,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hover
+      objectReference: {fileID: 0}
+    - target: {fileID: 5952549877573738461, guid: ce1b1c9a8d68741c194647bf16ba5e33,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6114003710898971273, guid: ce1b1c9a8d68741c194647bf16ba5e33,
         type: 3}

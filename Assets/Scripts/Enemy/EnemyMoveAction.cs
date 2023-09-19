@@ -40,9 +40,10 @@ namespace Unity.LEGO.Behaviours.Actions
         private WaypointManager m_WaypointManager;
         bool m_Detonated;
 
-        public string m_Name = "Enemy";
         public int m_Bonus = 0;
         public int m_Health = 100;
+
+        public GameObject m_PrefabTag;
 
         ControlMovement m_ControlMovement;
         List<LEGOBehaviour> m_Behaviours = new List<LEGOBehaviour>();
@@ -238,6 +239,10 @@ namespace Unity.LEGO.Behaviours.Actions
                     {
                         Destroy(behaviour);
                     }
+                }
+                if (m_PrefabTag)
+                {
+                    Destroy(m_PrefabTag);
                 }
             }
         }
