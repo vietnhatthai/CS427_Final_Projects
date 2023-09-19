@@ -240,10 +240,10 @@ namespace Unity.LEGO.Behaviours.Actions
                         Destroy(behaviour);
                     }
                 }
-                //if (m_PrefabTag)
-                //{
-                //    Destroy(gameObject);
-                //}
+                if (m_PrefabTag)
+                {
+                    Destroy(m_PrefabTag);
+                }
             }
         }
     }
