@@ -246,7 +246,7 @@ MonoBehaviour:
   totalBounds:
     m_Center: {x: 0, y: 0.4, z: -0.16897649}
     m_Extent: {x: 0.4, y: 0.4, z: 0.5689765}
-  colliding: 1
+  colliding: 0
 --- !u!114 &7097365609456376506
 MonoBehaviour:
   m_ObjectHideFlags: 10
@@ -1074,7 +1074,9 @@ MonoBehaviour:
   feature:
     field: {fileID: 3520292402485869625}
     axleType: 6
-  connectedTo: []
+  connectedTo:
+  - field: {fileID: 3304474993744002933}
+    interaction: 5
 --- !u!136 &7007260590885803895
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1312,7 +1314,9 @@ MonoBehaviour:
   feature:
     field: {fileID: 552647804646324164}
     axleType: 7
-  connectedTo: []
+  connectedTo:
+  - field: {fileID: 8690685847162721738}
+    interaction: 5
 --- !u!136 &4275980360847565180
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1930,7 +1934,7 @@ MonoBehaviour:
     flags: 1
     knob: {fileID: 0}
     tubes: []
-  connected: 
+  connected: 10000000080000000600000012000000
   connectableConnections: 25
   connectedTo:
   - field: {fileID: 0}
@@ -1945,16 +1949,12 @@ MonoBehaviour:
     indexOfConnection: 0
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
-  - field: {fileID: 0}
-    indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
+  - field: {fileID: 4663493292583540893}
+    indexOfConnection: 16
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: 0
+  - field: {fileID: 4663493292583540893}
+    indexOfConnection: 18
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -1966,11 +1966,15 @@ MonoBehaviour:
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
-    indexOfConnection: -1
-  - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
-    indexOfConnection: -1
+    indexOfConnection: 0
+  - field: {fileID: 8567273854126705602}
+    indexOfConnection: 4
+  - field: {fileID: 0}
+    indexOfConnection: 0
+  - field: {fileID: 6409010333595846878}
+    indexOfConnection: 4
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -2821,7 +2825,7 @@ MonoBehaviour:
   totalBounds:
     m_Center: {x: -0.40000004, y: 0.249, z: -0.40000004}
     m_Extent: {x: 0.8, y: 0.249, z: 0.8}
-  colliding: 1
+  colliding: 0
 --- !u!114 &7975097739687700175
 MonoBehaviour:
   m_ObjectHideFlags: 10
@@ -3103,7 +3107,7 @@ MonoBehaviour:
   totalBounds:
     m_Center: {x: -0.40000004, y: 0.32, z: 0.20000002}
     m_Extent: {x: 0.8, y: 0.32, z: 0.6}
-  colliding: 1
+  colliding: 0
 --- !u!114 &804243958437041415
 MonoBehaviour:
   m_ObjectHideFlags: 10
@@ -3604,7 +3608,7 @@ MonoBehaviour:
     flags: 1
     knob: {fileID: 0}
     tubes: []
-  connected: 
+  connected: 06000000120000001000000008000000
   connectableConnections: 25
   connectedTo:
   - field: {fileID: 0}
@@ -3619,16 +3623,12 @@ MonoBehaviour:
     indexOfConnection: 0
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
-  - field: {fileID: 0}
-    indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
+  - field: {fileID: 3146597884483608706}
+    indexOfConnection: 4
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: 0
+  - field: {fileID: 1124730132557138414}
+    indexOfConnection: 4
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -3640,11 +3640,15 @@ MonoBehaviour:
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
-    indexOfConnection: -1
-  - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
-    indexOfConnection: -1
+    indexOfConnection: 0
+  - field: {fileID: 7790742681889919989}
+    indexOfConnection: 6
+  - field: {fileID: 0}
+    indexOfConnection: 0
+  - field: {fileID: 7790742681889919989}
+    indexOfConnection: 8
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -3842,7 +3846,7 @@ MonoBehaviour:
   totalBounds:
     m_Center: {x: 0, y: 0.2488, z: -0.32461}
     m_Extent: {x: 0.4, y: 0.2488, z: 0.72461}
-  colliding: 1
+  colliding: 0
 --- !u!114 &7983071198395774707
 MonoBehaviour:
   m_ObjectHideFlags: 10
@@ -4668,7 +4672,7 @@ MonoBehaviour:
     flags: 1
     knob: {fileID: 0}
     tubes: []
-  connected: 
+  connected: 06000000100000001200000008000000
   connectableConnections: 25
   connectedTo:
   - field: {fileID: 0}
@@ -4683,16 +4687,12 @@ MonoBehaviour:
     indexOfConnection: 0
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
-  - field: {fileID: 0}
-    indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
+  - field: {fileID: 4259486453166775948}
+    indexOfConnection: 4
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: 0
+  - field: {fileID: 2454532216336872724}
+    indexOfConnection: 4
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -4704,11 +4704,15 @@ MonoBehaviour:
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
-    indexOfConnection: -1
-  - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
-    indexOfConnection: -1
+    indexOfConnection: 0
+  - field: {fileID: 5050309282957441459}
+    indexOfConnection: 4
+  - field: {fileID: 0}
+    indexOfConnection: 0
+  - field: {fileID: 5257966903000709857}
+    indexOfConnection: 4
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -4907,7 +4911,7 @@ MonoBehaviour:
     flags: 1
     knob: {fileID: 0}
     tubes: []
-  connected: 
+  connected: 04000000
   connectableConnections: 9
   connectedTo:
   - field: {fileID: 0}
@@ -4918,8 +4922,8 @@ MonoBehaviour:
     indexOfConnection: 0
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
+  - field: {fileID: 3318579339787024776}
+    indexOfConnection: 8
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -6275,7 +6279,7 @@ MonoBehaviour:
     flags: 1
     knob: {fileID: 0}
     tubes: []
-  connected: 
+  connected: 04000000
   connectableConnections: 9
   connectedTo:
   - field: {fileID: 0}
@@ -6286,8 +6290,8 @@ MonoBehaviour:
     indexOfConnection: 0
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
+  - field: {fileID: 4663493292583540893}
+    indexOfConnection: 6
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -7668,12 +7672,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2648905530398984240}
   m_LocalRotation: {x: 0.3526642, y: -0.6128062, z: 0.61281824, w: 0.35291702}
-  m_LocalPosition: {x: 1.0899982, y: 0.56000036, z: 0.8000002}
+  m_LocalPosition: {x: 1.089999, y: 0.56000054, z: 0.8000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 311075248756744120}
-  m_Father: {fileID: 7505049377983199889}
+  m_Father: {fileID: 3778827539638638874}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6184317959103335776
@@ -7695,7 +7699,7 @@ MonoBehaviour:
   totalBounds:
     m_Center: {x: 0, y: -0.4118135, z: 0.6105005}
     m_Extent: {x: 0.29, y: 0.5818135, z: 0.9154995}
-  colliding: 1
+  colliding: 0
 --- !u!114 &4413082130060205848
 MonoBehaviour:
   m_ObjectHideFlags: 10
@@ -7837,109 +7841,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.415366, y: 0.122, z: 0.64118}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &2661861097131654709
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7505049377983199889}
-  - component: {fileID: 6654881035039728255}
-  - component: {fileID: 311190904208940441}
-  - component: {fileID: 1269786438891425697}
-  - component: {fileID: 3535609180679439876}
-  m_Layer: 0
-  m_Name: Main model
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7505049377983199889
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2661861097131654709}
-  m_LocalRotation: {x: -0.00011362811, y: -0.2590794, z: -0, w: 0.965856}
-  m_LocalPosition: {x: 0.0005632248, y: 0.9661362, z: -0.06079329}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 8329894427605347134}
-  m_Father: {fileID: 3862513172306464522}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6654881035039728255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2661861097131654709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5b415de9143b43089f4e82527ef7bae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groupName: Main model
-  parentName: micro-scale gun walker
-  number: 0
-  importSettings:
-    colliders: 1
-    connectivity: 1
-    isStatic: 0
-    lightmapped: 0
-    randomizeRotation: 1
-    lod: 0
-  optimizations: -1
-  randomizeNormals: 0
-  processed: 0
-  absoluteFilePath: 
-  relativeFilePath: 
-  autoGenerated: 1
-  views: []
---- !u!114 &311190904208940441
-MonoBehaviour:
-  m_ObjectHideFlags: 10
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2661861097131654709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f42fcb47871d4701b3266f1898889f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1269786438891425697
-MonoBehaviour:
-  m_ObjectHideFlags: 10
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2661861097131654709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1866bcbd8c2a24af1a150aeee9b24e17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3535609180679439876
-MonoBehaviour:
-  m_ObjectHideFlags: 8
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2661861097131654709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6076960a4ddd54b0996d52f1bfdcc6fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onlyActiveGameObject: 1
-  hideChildren: 0
 --- !u!1 &2687205281996869241
 GameObject:
   m_ObjectHideFlags: 0
@@ -8104,7 +8005,7 @@ MonoBehaviour:
     flags: 0
     knob: {fileID: 0}
     tubes: []
-  connected: 
+  connected: 04000000
   connectableConnections: 9
   connectedTo:
   - field: {fileID: 0}
@@ -8115,8 +8016,8 @@ MonoBehaviour:
     indexOfConnection: 0
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
+  - field: {fileID: 4277259214627790662}
+    indexOfConnection: 6
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -8370,7 +8271,7 @@ MonoBehaviour:
     flags: 1
     knob: {fileID: 0}
     tubes: []
-  connected: 
+  connected: 06000000100000001200000008000000
   connectableConnections: 25
   connectedTo:
   - field: {fileID: 0}
@@ -8385,16 +8286,12 @@ MonoBehaviour:
     indexOfConnection: 0
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
-  - field: {fileID: 0}
-    indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
+  - field: {fileID: 3280996689525949631}
+    indexOfConnection: 4
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: 0
+  - field: {fileID: 7266556773409538948}
+    indexOfConnection: 4
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -8406,11 +8303,15 @@ MonoBehaviour:
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
-    indexOfConnection: -1
-  - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
-    indexOfConnection: -1
+    indexOfConnection: 0
+  - field: {fileID: 3134719742236152281}
+    indexOfConnection: 4
+  - field: {fileID: 0}
+    indexOfConnection: 0
+  - field: {fileID: 8500502633302239102}
+    indexOfConnection: 4
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -8798,109 +8699,6 @@ Transform:
   m_Father: {fileID: 4170473471462479112}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2889247388080707124
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5848238136594598730}
-  - component: {fileID: 8826432023618712700}
-  - component: {fileID: 2168894958910252928}
-  - component: {fileID: 6595979280925616721}
-  - component: {fileID: 3638353134458245318}
-  m_Layer: 0
-  m_Name: Main model
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5848238136594598730
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2889247388080707124}
-  m_LocalRotation: {x: -0.00011362811, y: -0.2590794, z: -0, w: 0.965856}
-  m_LocalPosition: {x: 0.0005632248, y: 0.9661362, z: -0.06079329}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 906353244230692668}
-  m_Father: {fileID: 3862513172306464522}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8826432023618712700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2889247388080707124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5b415de9143b43089f4e82527ef7bae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groupName: Main model
-  parentName: micro-scale gun walker
-  number: 0
-  importSettings:
-    colliders: 1
-    connectivity: 1
-    isStatic: 0
-    lightmapped: 0
-    randomizeRotation: 1
-    lod: 0
-  optimizations: -1
-  randomizeNormals: 0
-  processed: 0
-  absoluteFilePath: 
-  relativeFilePath: 
-  autoGenerated: 1
-  views: []
---- !u!114 &2168894958910252928
-MonoBehaviour:
-  m_ObjectHideFlags: 10
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2889247388080707124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f42fcb47871d4701b3266f1898889f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6595979280925616721
-MonoBehaviour:
-  m_ObjectHideFlags: 10
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2889247388080707124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1866bcbd8c2a24af1a150aeee9b24e17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3638353134458245318
-MonoBehaviour:
-  m_ObjectHideFlags: 8
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2889247388080707124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6076960a4ddd54b0996d52f1bfdcc6fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onlyActiveGameObject: 1
-  hideChildren: 0
 --- !u!1 &2966214810170146639
 GameObject:
   m_ObjectHideFlags: 0
@@ -9228,7 +9026,7 @@ MonoBehaviour:
     flags: 0
     knob: {fileID: 0}
     tubes: []
-  connected: 
+  connected: 04000000
   connectableConnections: 9
   connectedTo:
   - field: {fileID: 0}
@@ -9239,8 +9037,8 @@ MonoBehaviour:
     indexOfConnection: 0
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
+  - field: {fileID: 2442405192037707254}
+    indexOfConnection: 6
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -9317,6 +9115,10 @@ Transform:
   - {fileID: 163109109721615599}
   - {fileID: 6671589346420012257}
   - {fileID: 8555341246970304350}
+  - {fileID: 8329894427605347134}
+  - {fileID: 966380463359349409}
+  - {fileID: 906353244230692668}
+  - {fileID: 7982579774782533586}
   m_Father: {fileID: 3862513172306464522}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9380,109 +9182,6 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3003618774407612383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6076960a4ddd54b0996d52f1bfdcc6fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onlyActiveGameObject: 1
-  hideChildren: 0
---- !u!1 &3038628313126137649
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2212780840711915511}
-  - component: {fileID: 7402931546140536958}
-  - component: {fileID: 5175969068158881056}
-  - component: {fileID: 2398958147918208865}
-  - component: {fileID: 7213566740061618126}
-  m_Layer: 0
-  m_Name: Main model
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2212780840711915511
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3038628313126137649}
-  m_LocalRotation: {x: -0.00011362811, y: -0.2590794, z: -0, w: 0.965856}
-  m_LocalPosition: {x: 0.0005632248, y: 0.9661362, z: -0.06079329}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7982579774782533586}
-  m_Father: {fileID: 3862513172306464522}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7402931546140536958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3038628313126137649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5b415de9143b43089f4e82527ef7bae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groupName: Main model
-  parentName: micro-scale gun walker
-  number: 0
-  importSettings:
-    colliders: 1
-    connectivity: 1
-    isStatic: 0
-    lightmapped: 0
-    randomizeRotation: 1
-    lod: 0
-  optimizations: -1
-  randomizeNormals: 0
-  processed: 0
-  absoluteFilePath: 
-  relativeFilePath: 
-  autoGenerated: 1
-  views: []
---- !u!114 &5175969068158881056
-MonoBehaviour:
-  m_ObjectHideFlags: 10
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3038628313126137649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f42fcb47871d4701b3266f1898889f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2398958147918208865
-MonoBehaviour:
-  m_ObjectHideFlags: 10
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3038628313126137649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1866bcbd8c2a24af1a150aeee9b24e17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7213566740061618126
-MonoBehaviour:
-  m_ObjectHideFlags: 8
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3038628313126137649}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6076960a4ddd54b0996d52f1bfdcc6fa, type: 3}
@@ -9880,7 +9579,7 @@ MonoBehaviour:
   totalBounds:
     m_Center: {x: 0, y: 0.4, z: -0.16897649}
     m_Extent: {x: 0.4, y: 0.4, z: 0.5689765}
-  colliding: 1
+  colliding: 0
 --- !u!114 &2549430664496896766
 MonoBehaviour:
   m_ObjectHideFlags: 10
@@ -10670,12 +10369,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3507774814745695987}
   m_LocalRotation: {x: 0.61160594, y: -0.35472396, z: 0.353579, w: 0.61244667}
-  m_LocalPosition: {x: 1.0899982, y: 0.56000036, z: -0.8000002}
+  m_LocalPosition: {x: 1.0899991, y: 0.56000054, z: -0.8000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3367451852935032474}
-  m_Father: {fileID: 2212780840711915511}
+  m_Father: {fileID: 3778827539638638874}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2715917463416330947
@@ -10697,7 +10396,7 @@ MonoBehaviour:
   totalBounds:
     m_Center: {x: 0, y: -0.4118135, z: 0.6105005}
     m_Extent: {x: 0.29, y: 0.5818135, z: 0.9154995}
-  colliding: 1
+  colliding: 0
 --- !u!114 &2640173693453076652
 MonoBehaviour:
   m_ObjectHideFlags: 10
@@ -10885,12 +10584,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3521296912169456749}
   m_LocalRotation: {x: 0.61368066, y: 0.3531872, z: -0.3528055, w: 0.6117052}
-  m_LocalPosition: {x: -1.0900002, y: 0.5600001, z: -0.8000002}
+  m_LocalPosition: {x: -1.0899993, y: 0.56000024, z: -0.80000013}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 413121978269290206}
-  m_Father: {fileID: 5848238136594598730}
+  m_Father: {fileID: 3778827539638638874}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4363466342934323136
@@ -10912,7 +10611,7 @@ MonoBehaviour:
   totalBounds:
     m_Center: {x: 0, y: -0.4118135, z: 0.6105005}
     m_Extent: {x: 0.29, y: 0.5818135, z: 0.9154995}
-  colliding: 1
+  colliding: 0
 --- !u!114 &6120311694597559408
 MonoBehaviour:
   m_ObjectHideFlags: 10
@@ -11243,7 +10942,7 @@ MonoBehaviour:
   totalBounds:
     m_Center: {x: 0, y: 0.2488, z: -0.32461}
     m_Extent: {x: 0.4, y: 0.2488, z: 0.72461}
-  colliding: 1
+  colliding: 0
 --- !u!114 &712316875473231496
 MonoBehaviour:
   m_ObjectHideFlags: 10
@@ -11599,7 +11298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4442911460748669303
 Transform:
   m_ObjectHideFlags: 0
@@ -12592,7 +12291,7 @@ MonoBehaviour:
     flags: 0
     knob: {fileID: 0}
     tubes: []
-  connected: 
+  connected: 04000000
   connectableConnections: 9
   connectedTo:
   - field: {fileID: 0}
@@ -12603,8 +12302,8 @@ MonoBehaviour:
     indexOfConnection: 0
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
+  - field: {fileID: 3683898146839448314}
+    indexOfConnection: 4
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -14036,7 +13735,7 @@ MonoBehaviour:
     flags: 0
     knob: {fileID: 0}
     tubes: []
-  connected: 
+  connected: 04000000
   connectableConnections: 9
   connectedTo:
   - field: {fileID: 0}
@@ -14047,8 +13746,8 @@ MonoBehaviour:
     indexOfConnection: 0
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
+  - field: {fileID: 7790742681889919989}
+    indexOfConnection: 18
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -14187,7 +13886,9 @@ MonoBehaviour:
   feature:
     field: {fileID: 7051439099013893592}
     axleType: 6
-  connectedTo: []
+  connectedTo:
+  - field: {fileID: 135603090715058279}
+    interaction: 5
 --- !u!136 &3880391859400827633
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14731,7 +14432,9 @@ MonoBehaviour:
   feature:
     field: {fileID: 3304474993744002933}
     axleType: 7
-  connectedTo: []
+  connectedTo:
+  - field: {fileID: 3520292402485869625}
+    interaction: 5
 --- !u!136 &1690744466776811512
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15319,7 +15022,7 @@ MonoBehaviour:
   totalBounds:
     m_Center: {x: 0.40000004, y: 0.2490025, z: 0}
     m_Extent: {x: 0.8, y: 0.2490025, z: 0.4}
-  colliding: 1
+  colliding: 0
 --- !u!114 &1270834282412100923
 MonoBehaviour:
   m_ObjectHideFlags: 10
@@ -15625,7 +15328,7 @@ MonoBehaviour:
     flags: 0
     knob: {fileID: 0}
     tubes: []
-  connected: 
+  connected: 04000000
   connectableConnections: 9
   connectedTo:
   - field: {fileID: 0}
@@ -15636,8 +15339,8 @@ MonoBehaviour:
     indexOfConnection: 0
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
+  - field: {fileID: 4277259214627790662}
+    indexOfConnection: 18
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -15900,7 +15603,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3878917222142239662
 Transform:
   m_ObjectHideFlags: 0
@@ -16121,7 +15824,9 @@ MonoBehaviour:
   feature:
     field: {fileID: 7629912121141239820}
     axleType: 6
-  connectedTo: []
+  connectedTo:
+  - field: {fileID: 3414842888427371578}
+    interaction: 5
 --- !u!136 &799960507551220714
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16622,7 +16327,7 @@ MonoBehaviour:
     flags: 0
     knob: {fileID: 0}
     tubes: []
-  connected: 
+  connected: 04000000
   connectableConnections: 9
   connectedTo:
   - field: {fileID: 0}
@@ -16633,8 +16338,8 @@ MonoBehaviour:
     indexOfConnection: 0
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
+  - field: {fileID: 4277259214627790662}
+    indexOfConnection: 8
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -16829,7 +16534,7 @@ MonoBehaviour:
     flags: 0
     knob: {fileID: 0}
     tubes: []
-  connected: 
+  connected: 04000000
   connectableConnections: 9
   connectedTo:
   - field: {fileID: 0}
@@ -16840,8 +16545,8 @@ MonoBehaviour:
     indexOfConnection: 0
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
+  - field: {fileID: 2442405192037707254}
+    indexOfConnection: 18
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -16927,7 +16632,9 @@ MonoBehaviour:
   feature:
     field: {fileID: 3414842888427371578}
     axleType: 7
-  connectedTo: []
+  connectedTo:
+  - field: {fileID: 7629912121141239820}
+    interaction: 5
 --- !u!136 &2808663616165265730
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17411,7 +17118,9 @@ MonoBehaviour:
   feature:
     field: {fileID: 135603090715058279}
     axleType: 7
-  connectedTo: []
+  connectedTo:
+  - field: {fileID: 7051439099013893592}
+    interaction: 5
 --- !u!136 &1995427075685174412
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -18162,7 +17871,7 @@ MonoBehaviour:
     flags: 0
     knob: {fileID: 0}
     tubes: []
-  connected: 
+  connected: 04000000
   connectableConnections: 9
   connectedTo:
   - field: {fileID: 0}
@@ -18173,8 +17882,8 @@ MonoBehaviour:
     indexOfConnection: 0
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
+  - field: {fileID: 2442405192037707254}
+    indexOfConnection: 8
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -18288,12 +17997,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5892645373510417929}
   m_LocalRotation: {x: -0.35475227, y: -0.61205906, z: 0.6113446, w: -0.35467213}
-  m_LocalPosition: {x: -1.0900002, y: 0.5599999, z: 0.8000002}
+  m_LocalPosition: {x: -1.0899993, y: 0.56, z: 0.8000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1586277781872082995}
-  m_Father: {fileID: 8780900026614879629}
+  m_Father: {fileID: 3778827539638638874}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1219841080982241689
@@ -18315,7 +18024,7 @@ MonoBehaviour:
   totalBounds:
     m_Center: {x: 0, y: -0.4118135, z: 0.6105005}
     m_Extent: {x: 0.29, y: 0.5818135, z: 0.9154995}
-  colliding: 1
+  colliding: 0
 --- !u!114 &927772894174414882
 MonoBehaviour:
   m_ObjectHideFlags: 10
@@ -19718,7 +19427,7 @@ MonoBehaviour:
     flags: 0
     knob: {fileID: 0}
     tubes: []
-  connected: 
+  connected: 04000000
   connectableConnections: 9
   connectedTo:
   - field: {fileID: 0}
@@ -19729,8 +19438,8 @@ MonoBehaviour:
     indexOfConnection: 0
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
+  - field: {fileID: 7185154168352527398}
+    indexOfConnection: 4
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -19987,7 +19696,7 @@ MonoBehaviour:
   totalBounds:
     m_Center: {x: -0.40000004, y: 0.474967, z: -0.25}
     m_Extent: {x: 0.8, y: 0.474967, z: 0.95000005}
-  colliding: 1
+  colliding: 0
 --- !u!114 &7752198181859832133
 MonoBehaviour:
   m_ObjectHideFlags: 10
@@ -20293,7 +20002,7 @@ MonoBehaviour:
     flags: 1
     knob: {fileID: 0}
     tubes: []
-  connected: 
+  connected: 04000000
   connectableConnections: 9
   connectedTo:
   - field: {fileID: 0}
@@ -20304,8 +20013,8 @@ MonoBehaviour:
     indexOfConnection: 0
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
+  - field: {fileID: 9139431579929268054}
+    indexOfConnection: 4
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -20552,7 +20261,7 @@ MonoBehaviour:
   totalBounds:
     m_Center: {x: 0.40000004, y: 0.2490025, z: 0}
     m_Extent: {x: 0.8, y: 0.2490025, z: 0.4}
-  colliding: 1
+  colliding: 0
 --- !u!114 &8031204072439137931
 MonoBehaviour:
   m_ObjectHideFlags: 10
@@ -21047,7 +20756,7 @@ MonoBehaviour:
     flags: 0
     knob: {fileID: 0}
     tubes: []
-  connected: 
+  connected: 04000000
   connectableConnections: 9
   connectedTo:
   - field: {fileID: 0}
@@ -21058,8 +20767,8 @@ MonoBehaviour:
     indexOfConnection: 0
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
+  - field: {fileID: 7790742681889919989}
+    indexOfConnection: 16
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -21297,7 +21006,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &755788457391575967
 Transform:
   m_ObjectHideFlags: 0
@@ -21396,7 +21105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5204891946292212870
 Transform:
   m_ObjectHideFlags: 0
@@ -21664,7 +21373,9 @@ MonoBehaviour:
   feature:
     field: {fileID: 8690685847162721738}
     axleType: 6
-  connectedTo: []
+  connectedTo:
+  - field: {fileID: 552647804646324164}
+    interaction: 5
 --- !u!136 &1034099977347427493
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -21798,7 +21509,7 @@ MonoBehaviour:
   totalBounds:
     m_Center: {x: -0.40000004, y: 0.249, z: -0.40000004}
     m_Extent: {x: 0.8, y: 0.249, z: 0.8}
-  colliding: 1
+  colliding: 0
 --- !u!114 &3417550993825218207
 MonoBehaviour:
   m_ObjectHideFlags: 10
@@ -22216,7 +21927,7 @@ MonoBehaviour:
     flags: 1
     knob: {fileID: 0}
     tubes: []
-  connected: 
+  connected: 0800000006000000
   connectableConnections: 15
   connectedTo:
   - field: {fileID: 0}
@@ -22231,12 +21942,12 @@ MonoBehaviour:
     indexOfConnection: 0
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
+  - field: {fileID: 2970342961089407277}
+    indexOfConnection: 4
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
+  - field: {fileID: 8164122004627927879}
+    indexOfConnection: 4
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -22598,7 +22309,7 @@ MonoBehaviour:
     flags: 1
     knob: {fileID: 0}
     tubes: []
-  connected: 
+  connected: 04000000
   connectableConnections: 9
   connectedTo:
   - field: {fileID: 0}
@@ -22609,8 +22320,8 @@ MonoBehaviour:
     indexOfConnection: 0
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
+  - field: {fileID: 4663493292583540893}
+    indexOfConnection: 8
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -22752,7 +22463,7 @@ MonoBehaviour:
     flags: 1
     knob: {fileID: 0}
     tubes: []
-  connected: 
+  connected: 04000000
   connectableConnections: 9
   connectedTo:
   - field: {fileID: 0}
@@ -22763,8 +22474,8 @@ MonoBehaviour:
     indexOfConnection: 0
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
+  - field: {fileID: 3318579339787024776}
+    indexOfConnection: 6
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -22964,7 +22675,7 @@ MonoBehaviour:
     flags: 0
     knob: {fileID: 0}
     tubes: []
-  connected: 
+  connected: 04000000
   connectableConnections: 9
   connectedTo:
   - field: {fileID: 0}
@@ -22975,8 +22686,8 @@ MonoBehaviour:
     indexOfConnection: 0
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
+  - field: {fileID: 4277259214627790662}
+    indexOfConnection: 16
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -23224,7 +22935,7 @@ MonoBehaviour:
     flags: 0
     knob: {fileID: 0}
     tubes: []
-  connected: 
+  connected: 04000000
   connectableConnections: 9
   connectedTo:
   - field: {fileID: 0}
@@ -23235,8 +22946,8 @@ MonoBehaviour:
     indexOfConnection: 0
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
+  - field: {fileID: 2442405192037707254}
+    indexOfConnection: 16
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
@@ -24035,109 +23746,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.78, y: 0.191244, z: 0.191244}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &7966246030968478152
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8780900026614879629}
-  - component: {fileID: 675165047626355793}
-  - component: {fileID: 839414506761722939}
-  - component: {fileID: 7535997760971337693}
-  - component: {fileID: 8374707902633849252}
-  m_Layer: 0
-  m_Name: Main model
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8780900026614879629
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7966246030968478152}
-  m_LocalRotation: {x: -0.00011362811, y: -0.2590794, z: -0, w: 0.965856}
-  m_LocalPosition: {x: 0.0005632248, y: 0.9661362, z: -0.06079329}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 966380463359349409}
-  m_Father: {fileID: 3862513172306464522}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &675165047626355793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7966246030968478152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5b415de9143b43089f4e82527ef7bae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groupName: Main model
-  parentName: micro-scale gun walker
-  number: 0
-  importSettings:
-    colliders: 1
-    connectivity: 1
-    isStatic: 0
-    lightmapped: 0
-    randomizeRotation: 1
-    lod: 0
-  optimizations: -1
-  randomizeNormals: 0
-  processed: 0
-  absoluteFilePath: 
-  relativeFilePath: 
-  autoGenerated: 1
-  views: []
---- !u!114 &839414506761722939
-MonoBehaviour:
-  m_ObjectHideFlags: 10
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7966246030968478152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f42fcb47871d4701b3266f1898889f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7535997760971337693
-MonoBehaviour:
-  m_ObjectHideFlags: 10
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7966246030968478152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1866bcbd8c2a24af1a150aeee9b24e17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8374707902633849252
-MonoBehaviour:
-  m_ObjectHideFlags: 8
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7966246030968478152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6076960a4ddd54b0996d52f1bfdcc6fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onlyActiveGameObject: 1
-  hideChildren: 0
 --- !u!1 &7968791344758727243
 GameObject:
   m_ObjectHideFlags: 0
@@ -24750,12 +24358,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3778827539638638874}
-  - {fileID: 2212780840711915511}
-  - {fileID: 7505049377983199889}
-  - {fileID: 8780900026614879629}
-  - {fileID: 5848238136594598730}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8836504085209766122
 MonoBehaviour:
@@ -25050,7 +24654,7 @@ MonoBehaviour:
   totalBounds:
     m_Center: {x: 0, y: 0.2488, z: -0.32461}
     m_Extent: {x: 0.4, y: 0.2488, z: 0.72461}
-  colliding: 1
+  colliding: 0
 --- !u!114 &8407554272259651512
 MonoBehaviour:
   m_ObjectHideFlags: 10
@@ -25414,7 +25018,7 @@ MonoBehaviour:
     flags: 1
     knob: {fileID: 0}
     tubes: []
-  connected: 
+  connected: 04000000
   connectableConnections: 9
   connectedTo:
   - field: {fileID: 0}
@@ -25425,8 +25029,8 @@ MonoBehaviour:
     indexOfConnection: 0
   - field: {fileID: 0}
     indexOfConnection: 0
-  - field: {fileID: 0}
-    indexOfConnection: -1
+  - field: {fileID: 1220468756273356313}
+    indexOfConnection: 4
   - field: {fileID: 0}
     indexOfConnection: 0
   - field: {fileID: 0}
