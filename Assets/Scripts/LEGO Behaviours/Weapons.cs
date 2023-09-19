@@ -99,7 +99,7 @@ namespace Unity.LEGO.Behaviours.Actions
                     weaponHUB.clean();
                     for (int i = 0; i < m_WeaponsData.weapons.Length; i++)
                     {
-                        weaponHUB.AddWeapon(m_WeaponsData.GetWeapon(i).m_Icon, i);
+                        weaponHUB.AddWeapon(m_WeaponsData.GetWeapon(i), i);
                     }
                     weaponHUB.SelectWeapon += SelectWeaponHandler;
                     weaponHUB.Show();
