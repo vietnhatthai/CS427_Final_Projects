@@ -57,11 +57,11 @@ public class WeaponHUB : MonoBehaviour
         SelectWeapon?.Invoke(index);
     }
 
-    public void AddWeapon(Sprite sprite, int index)
+    public void AddWeapon(WeaponData data, int index)
     {
         var i = index;
         GameObject weapon = Instantiate(m_WeaponPrefab, parent.transform);
-        weapon.GetComponent<Image>().sprite = sprite;
+        weapon.GetComponent<Image>().sprite = data.m_Icon;
         weapon.GetComponent<Button>().onClick.AddListener(() =>
         {
             SelectWeaponHandler(i);
