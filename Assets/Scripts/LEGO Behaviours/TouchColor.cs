@@ -78,7 +78,7 @@ namespace Unity.LEGO.Behaviours.Triggers
                 part.materialIDs[0] = (int)m_MouldingColour;
             }
 
-            SetMaterial(true);
+            SetMaterial(false);
         }
 
         protected new void SensoryColliderDeactivated(SensoryCollider collider)
@@ -88,7 +88,7 @@ namespace Unity.LEGO.Behaviours.Triggers
             {
                 parts[i].materialIDs[0] = color_original[i];
             }
-            SetMaterial(true);
+            SetMaterial(false);
         }
 
         private Material GetMaterial(int id)
