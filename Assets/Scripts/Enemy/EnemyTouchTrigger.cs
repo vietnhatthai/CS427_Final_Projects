@@ -45,8 +45,11 @@ namespace Unity.LEGO.Behaviours.Triggers
             }
         }
 
-        protected new void SensoryColliderActivated(SensoryCollider collider, Collider _)
+        protected new void SensoryColliderActivated(SensoryCollider collider, Collider other)
         {
+            string name = other.gameObject.name;
+            bool isHQ = name == "HQ";
+
             GameObject modelGO = gameObject;
             BrickColliderCombiner.CombineColliders(modelGO);
             var behaviours = modelGO.GetComponentsInChildren<LEGOBehaviour>();
@@ -54,7 +57,7 @@ namespace Unity.LEGO.Behaviours.Triggers
             {
                 if (behaviour.GetType() == typeof(EnemyMoveAction))
                 {
-                    behaviour.GetComponent<EnemyMoveAction>().ExplodeAction();
+                    behaviour.GetComponent<EnemyMoveAction>().ExplodeAction(isHQ);
                 }
             }
         }

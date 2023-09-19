@@ -111,8 +111,15 @@ namespace Unity.LEGO.Behaviours.Actions
                     // Move and rotate control movement.
                     //m_ControlMovement.Movement(m_TargetDirection, m_MinSpeed, m_MaxSpeed, m_IdleSpeed, 0, 0);
 
+                    if (m_PrefabTag)
+                    {
+                        //m_PrefabTag.transform.position = m_Group.transform.position + Vector3.up + Vector3.forward * 3;
+                        m_PrefabTag.transform.localPosition = Vector3.up + Vector3.forward * 3;
+                    }
+
                     m_Group.transform.position += m_TargetDirection * m_Speed * Time.deltaTime;
                     m_ControlMovement.Rotation(m_TargetDirection, m_RotationSpeed);
+
 
                     // Update model position.
                     m_MovementTracker.UpdateModelPosition();
@@ -179,8 +186,13 @@ namespace Unity.LEGO.Behaviours.Actions
             Gizmos.DrawSphere(transform.position + forward * m_Speed, 0.2f);
         }
 
-        public void ExplodeAction()
+        public void ExplodeAction(bool isHQ)
         {
+            if (m_PrefabTag)
+            {
+                Destroy(m_PrefabTag);
+            }
+
             if (!m_Detonated)
             {
                 // Remove all game objects with LEGOBehaviourCollider components.
@@ -223,12 +235,15 @@ namespace Unity.LEGO.Behaviours.Actions
                 // Delay destruction of LEGOBehaviours one frame to allow multiple Explode Actions to detonate.
                 m_Detonated = true;
 
+                if (!isHQ)
+                {
+                    VariableManager.SetValue(m_BonusVariable, VariableManager.GetValue(m_BonusVariable) + m_Bonus);
+                }
+
                 if (VariableManager.GetValue(m_MinusVariable) > 0)
                 {
                     VariableManager.SetValue(m_MinusVariable, VariableManager.GetValue(m_MinusVariable) - 1);
                 }
-
-                VariableManager.SetValue(m_BonusVariable, VariableManager.GetValue(m_BonusVariable) + m_Bonus);
             }
             else
             {
@@ -239,10 +254,6 @@ namespace Unity.LEGO.Behaviours.Actions
                     {
                         Destroy(behaviour);
                     }
-                }
-                if (m_PrefabTag)
-                {
-                    Destroy(m_PrefabTag);
                 }
             }
         }
