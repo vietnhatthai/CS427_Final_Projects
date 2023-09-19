@@ -111,7 +111,10 @@ namespace Unity.LEGO.Behaviours.Actions
                     // Move and rotate control movement.
                     //m_ControlMovement.Movement(m_TargetDirection, m_MinSpeed, m_MaxSpeed, m_IdleSpeed, 0, 0);
 
-                    m_PrefabTag.transform.position = m_Group.transform.position + Vector3.up;
+                    if (m_PrefabTag)
+                    {
+                        m_PrefabTag.transform.position = m_Group.transform.position + Vector3.up + Vector3.forward * 3;
+                    }
 
                     m_Group.transform.position += m_TargetDirection * m_Speed * Time.deltaTime;
                     m_ControlMovement.Rotation(m_TargetDirection, m_RotationSpeed);
@@ -182,7 +185,7 @@ namespace Unity.LEGO.Behaviours.Actions
             Gizmos.DrawSphere(transform.position + forward * m_Speed, 0.2f);
         }
 
-        public void ExplodeAction()
+        public void ExplodeAction(bool isHQ)
         {
             if (m_PrefabTag)
             {
@@ -231,12 +234,15 @@ namespace Unity.LEGO.Behaviours.Actions
                 // Delay destruction of LEGOBehaviours one frame to allow multiple Explode Actions to detonate.
                 m_Detonated = true;
 
+                if (!isHQ)
+                {
+                    VariableManager.SetValue(m_BonusVariable, VariableManager.GetValue(m_BonusVariable) + m_Bonus);
+                }
+
                 if (VariableManager.GetValue(m_MinusVariable) > 0)
                 {
                     VariableManager.SetValue(m_MinusVariable, VariableManager.GetValue(m_MinusVariable) - 1);
                 }
-
-                VariableManager.SetValue(m_BonusVariable, VariableManager.GetValue(m_BonusVariable) + m_Bonus);
             }
             else
             {
