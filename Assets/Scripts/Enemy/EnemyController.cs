@@ -1,3 +1,4 @@
+using DialogSystem;
 using LEGOModelImporter;
 using System.Collections;
 using System.Collections.Generic;
@@ -133,6 +134,8 @@ namespace Unity.LEGO.Behaviours.Actions
 
         Vector3 m_ModelSpawnPosition;
 
+        DialogLine m_DialogLine;
+
         ParticleSystem m_ParticleSystem;
 
         GameObject m_ModelCopy;
@@ -202,6 +205,7 @@ namespace Unity.LEGO.Behaviours.Actions
         protected override void Start()
         {
             base.Start();
+            m_DialogLine = FindObjectOfType<DialogLine>();
 
             if (IsPlacedOnBrick())
             {
@@ -264,7 +268,12 @@ namespace Unity.LEGO.Behaviours.Actions
 
         protected void Update()
         {
-            if (m_Active && m_ModelCopy)
+            if (m_DialogLine && m_DialogLine.isProcessing)
+            {
+                VariableManager.SetValue(m_Variable, m_EnemyData.Count());
+            }
+
+            if (m_DialogLine && !m_DialogLine.isProcessing && m_Active && m_ModelCopy)
             {
                 m_Time += Time.deltaTime;
 

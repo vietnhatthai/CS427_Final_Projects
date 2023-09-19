@@ -113,7 +113,8 @@ namespace Unity.LEGO.Behaviours.Actions
 
                     if (m_PrefabTag)
                     {
-                        m_PrefabTag.transform.position = m_Group.transform.position + Vector3.up + Vector3.forward * 3;
+                        //m_PrefabTag.transform.position = m_Group.transform.position + Vector3.up + Vector3.forward * 3;
+                        m_PrefabTag.transform.localPosition = Vector3.up + Vector3.forward * 3;
                     }
 
                     m_Group.transform.position += m_TargetDirection * m_Speed * Time.deltaTime;
