@@ -34,6 +34,7 @@ namespace Unity.LEGO.Behaviours.Actions
         SpeechBubblePrompt m_SpeechBubblePrompt;
         bool m_PromptActive = true;
         int m_Id;
+        int m_SellPrice;
 
         private GameObject m_CurrentObject;
         private GameObject m_ObjectToSpawn;
@@ -83,6 +84,7 @@ namespace Unity.LEGO.Behaviours.Actions
 
                 m_CurrentObject.GetComponent<InputTrigger>().m_OtherKey = InputTrigger.Key.Q;
                 m_CurrentObject.GetComponent<InputTrigger>().UpdatePrompt();
+                m_SellPrice = m_WeaponsData.GetWeapon(index).m_SellPrice;
             }
             weaponHUB.Hide();
         }
@@ -107,8 +109,7 @@ namespace Unity.LEGO.Behaviours.Actions
                     Destroy(instant);
                     m_CurrentObject.GetComponent<InputTrigger>().m_OtherKey = InputTrigger.Key.E;
                     m_CurrentObject.GetComponent<InputTrigger>().UpdatePrompt();
-                    int sell = (int)m_WeaponsData.GetWeapon(0).m_SellPrice;
-                    VariableManager.SetValue(m_Variable, VariableManager.GetValue(m_Variable) + sell);
+                    VariableManager.SetValue(m_Variable, VariableManager.GetValue(m_Variable) + m_SellPrice);
                 }
 
                 m_Active = false;
@@ -158,8 +159,6 @@ namespace Unity.LEGO.Behaviours.Actions
 
             // Add this Speak Action to the speech bubble prompt.
             List<BubbleInfo> m_SpeechBubbleInfos = new List<BubbleInfo>() { m_SpeechBubbleInfo };
-            Debug.Log("m_SpeechBubbleInfos.Count " + m_SpeechBubbleInfos.Count);
-            Debug.Log("m_SpeechBubblePrompt " + m_SpeechBubblePrompt);
             m_Id = m_SpeechBubblePrompt.AddSpeech(m_SpeechBubbleInfos, 1, false, SpeechFinished, activeFromStart, promptHandler);
         }
 

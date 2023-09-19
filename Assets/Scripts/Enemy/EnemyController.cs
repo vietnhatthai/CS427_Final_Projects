@@ -35,6 +35,9 @@ namespace Unity.LEGO.Behaviours.Actions
             RandomZAxis
         }
 
+        [SerializeField]
+        GameObject m_PrefabTag = null;
+        
         [SerializeField, Tooltip("The variable to modify when the enemy is destroyed.")]
         Game.Variable m_Variable = default;
 
@@ -118,7 +121,6 @@ namespace Unity.LEGO.Behaviours.Actions
         float m_Time;
 
         float m_SpawnTime;
-        string m_Name;
         int m_Health;
         int m_Bonus;
         int m_Speed;
@@ -227,19 +229,17 @@ namespace Unity.LEGO.Behaviours.Actions
                     m_EnemyData.Add(m_EnemySettings.Get(i));
                 }
 
-                VariableManager.SetValue(m_Variable, m_EnemySettings.Count());
-
                 // setup first model
                 if (m_EnemyData.Count > 0)
                 {
                     SetupModelCopy(m_EnemyData[0].m_Prefab);
                     m_BuildTime = m_EnemyData[0].m_BuildTime;
                     m_Pause = m_EnemyData[0].m_WaitTime;
-                    m_Name = m_EnemyData[0].m_Name;
                     m_Health = m_EnemyData[0].m_Health;
                     m_Bonus = m_EnemyData[0].m_Bonus;
                     m_Speed = m_EnemyData[0].m_Speed;
 
+                    VariableManager.SetValue(m_Variable, m_EnemyData.Count());
                     m_EnemyData.RemoveAt(0);
                 }
             }
@@ -372,7 +372,6 @@ namespace Unity.LEGO.Behaviours.Actions
                             SetupModelCopy(m_EnemyData[0].m_Prefab);
                             m_BuildTime = m_EnemyData[0].m_BuildTime;
                             m_Pause = m_EnemyData[0].m_WaitTime;
-                            m_Name = m_EnemyData[0].m_Name;
                             m_Health = m_EnemyData[0].m_Health;
                             m_Bonus = m_EnemyData[0].m_Bonus;
                             m_Speed = m_EnemyData[0].m_Speed;
@@ -675,8 +674,10 @@ namespace Unity.LEGO.Behaviours.Actions
             }
 
 
+            GameObject go = Instantiate(m_PrefabTag, position, rotation);
+            go.transform.SetParent(modelGO.transform);
+            go.transform.localPosition = new Vector3(0, 0, 0);
             BrickColliderCombiner.CombineColliders(modelGO);
-
 
             var behaviours = modelGO.GetComponentsInChildren<LEGOBehaviour>();
             foreach (var behaviour in behaviours)
@@ -687,8 +688,8 @@ namespace Unity.LEGO.Behaviours.Actions
                     behaviour.GetComponent<EnemyMoveAction>().m_BonusVariable = m_CostVariable;
                     behaviour.GetComponent<EnemyMoveAction>().m_Speed = m_Speed;
                     behaviour.GetComponent<EnemyMoveAction>().m_Bonus = m_Bonus;
-                    behaviour.GetComponent<EnemyMoveAction>().m_Name = m_Name;
                     behaviour.GetComponent<EnemyMoveAction>().m_Health = m_Health;
+                    behaviour.GetComponent<EnemyMoveAction>().m_PrefabTag = go;
                 }
             }
 
