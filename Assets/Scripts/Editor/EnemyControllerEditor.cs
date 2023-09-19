@@ -25,6 +25,7 @@ namespace Unity.LEGO.EditorExt
         SerializedProperty m_SpawnOrientationTypeProp;
         SerializedProperty m_SpawnOrientationProp;
         SerializedProperty m_CollideProp;
+        SerializedProperty m_PrefabTagProp;
         //SerializedProperty m_BuildTimeProp;
 
         static readonly Color s_BacksideColour = new Color(0.1f, 1.0f, 0.0f, 0.1f);
@@ -48,6 +49,7 @@ namespace Unity.LEGO.EditorExt
             m_SpawnOrientationTypeProp = serializedObject.FindProperty("m_SpawnOrientationType");
             m_SpawnOrientationProp = serializedObject.FindProperty("m_SpawnOrientation");
             m_CollideProp = serializedObject.FindProperty("m_Collide");
+            m_PrefabTagProp = serializedObject.FindProperty("m_PrefabTag");
             //m_BuildTimeProp = serializedObject.FindProperty("m_BuildTime");
         }
 
@@ -58,6 +60,7 @@ namespace Unity.LEGO.EditorExt
 
             EditorGUI.BeginDisabledGroup(EditorApplication.isPlaying);
 
+            EditorGUILayout.PropertyField(m_PrefabTagProp);
             EditorGUILayout.PropertyField(m_EnemySettingsProp);
 
             EditorGUILayout.PropertyField(m_SpawnMethodProp);

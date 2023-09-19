@@ -35,6 +35,9 @@ namespace Unity.LEGO.Behaviours.Actions
             RandomZAxis
         }
 
+        [SerializeField]
+        GameObject m_PrefabTag = null;
+        
         [SerializeField, Tooltip("The variable to modify when the enemy is destroyed.")]
         Game.Variable m_Variable = default;
 
@@ -671,8 +674,10 @@ namespace Unity.LEGO.Behaviours.Actions
             }
 
 
+            GameObject go = Instantiate(m_PrefabTag, position, rotation);
+            go.transform.SetParent(modelGO.transform);
+            go.transform.localPosition = new Vector3(0, 0, 0);
             BrickColliderCombiner.CombineColliders(modelGO);
-
 
             var behaviours = modelGO.GetComponentsInChildren<LEGOBehaviour>();
             foreach (var behaviour in behaviours)
@@ -684,6 +689,7 @@ namespace Unity.LEGO.Behaviours.Actions
                     behaviour.GetComponent<EnemyMoveAction>().m_Speed = m_Speed;
                     behaviour.GetComponent<EnemyMoveAction>().m_Bonus = m_Bonus;
                     behaviour.GetComponent<EnemyMoveAction>().m_Health = m_Health;
+                    behaviour.GetComponent<EnemyMoveAction>().m_PrefabTag = go;
                 }
             }
 

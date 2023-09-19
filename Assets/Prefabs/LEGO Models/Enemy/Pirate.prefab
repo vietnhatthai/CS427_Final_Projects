@@ -2039,7 +2039,7 @@ GameObject:
   - component: {fileID: 4485774922522524865}
   m_Layer: 0
   m_Name: Pirate
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2741,7 +2741,7 @@ GameObject:
   - component: {fileID: 3158926682521399371}
   m_Layer: 0
   m_Name: 11211
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5417,7 +5417,7 @@ GameObject:
   - component: {fileID: 4950125690545134824}
   m_Layer: 0
   m_Name: 98138
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5967,7 +5967,7 @@ GameObject:
   - component: {fileID: 2060550026017825577}
   m_Layer: 0
   m_Name: 6141
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6626,7 +6626,7 @@ GameObject:
   - component: {fileID: 5632972373820682767}
   m_Layer: 0
   m_Name: 4032
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7432,7 +7432,7 @@ GameObject:
   - component: {fileID: 1172456891019143129}
   m_Layer: 0
   m_Name: 4032
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8388,7 +8388,7 @@ GameObject:
   - component: {fileID: 5463572978251715959}
   m_Layer: 0
   m_Name: 3004
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9144,7 +9144,7 @@ GameObject:
   - component: {fileID: 1866629809135275062}
   m_Layer: 0
   m_Name: 3003
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10686,7 +10686,7 @@ GameObject:
   - component: {fileID: 9105338934633342590}
   m_Layer: 0
   m_Name: 35275
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10848,7 +10848,10 @@ MonoBehaviour:
   m_JumpSpeed: 20
   m_MaxJumpsInAir: 0
   m_Gravity: 40
-  m_Variable: {fileID: 0}
+  m_MinusVariable: {fileID: 0}
+  m_BonusVariable: {fileID: 0}
+  m_Bonus: 0
+  m_Health: 100
 --- !u!114 &9105338934633342590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15399,7 +15402,7 @@ GameObject:
   - component: {fileID: 8311404017602378110}
   m_Layer: 0
   m_Name: 15208
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16507,7 +16510,7 @@ GameObject:
   - component: {fileID: 2632038030275994124}
   m_Layer: 0
   m_Name: 44674
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18826,6 +18829,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 5952549877573738461, guid: 64d1d089ce11e4eadaa32af6d2e3d1fd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5963510644016963638, guid: 64d1d089ce11e4eadaa32af6d2e3d1fd,
         type: 3}

@@ -43,6 +43,8 @@ namespace Unity.LEGO.Behaviours.Actions
         public int m_Bonus = 0;
         public int m_Health = 100;
 
+        public GameObject m_PrefabTag;
+
         ControlMovement m_ControlMovement;
         List<LEGOBehaviour> m_Behaviours = new List<LEGOBehaviour>();
 
@@ -238,6 +240,10 @@ namespace Unity.LEGO.Behaviours.Actions
                         Destroy(behaviour);
                     }
                 }
+                //if (m_PrefabTag)
+                //{
+                //    Destroy(gameObject);
+                //}
             }
         }
     }
