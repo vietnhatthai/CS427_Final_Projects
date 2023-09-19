@@ -1,3 +1,4 @@
+using TMPro;
 using Unity.LEGO.Game;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -8,6 +9,7 @@ public class WeaponHUB : MonoBehaviour
     [SerializeField] private GameObject canvas = default;
     [SerializeField] private GameObject parent = default;
     [SerializeField] private GameObject m_WeaponPrefab = default;
+    [SerializeField] private GameObject infor = default;
 
     public delegate void SelectWeaponDelegate(int index);
     public SelectWeaponDelegate SelectWeapon;
@@ -62,6 +64,29 @@ public class WeaponHUB : MonoBehaviour
         var i = index;
         GameObject weapon = Instantiate(m_WeaponPrefab, parent.transform);
         weapon.GetComponent<Image>().sprite = data.m_Icon;
+        EventTrigger.Entry eventtype_enter = new EventTrigger.Entry();
+        eventtype_enter.eventID = EventTriggerType.PointerEnter;
+        eventtype_enter.callback.AddListener((eventData) => {
+            Debug.Log("Hover");
+            infor.GetComponentInChildren<Image>().sprite = data.m_Icon;
+            Text content = infor.GetComponentInChildren<Text>();
+            content.text = string.Empty;
+            content.text += "Name: " + data.m_name + "\n";
+            content.text += "Price: " + data.m_Price.ToString() + "\n";
+            content.text += "Sell price: " + data.m_SellPrice.ToString() + "\n";
+            infor.SetActive(true);
+        });
+
+        EventTrigger.Entry eventtype_exit = new EventTrigger.Entry();
+        eventtype_exit.eventID = EventTriggerType.PointerExit;
+        eventtype_exit.callback.AddListener((eventData) => {
+            infor.SetActive(false);
+        });
+
+        weapon.AddComponent<EventTrigger>();
+        weapon.GetComponent<EventTrigger>().triggers.Add(eventtype_enter);
+        weapon.GetComponent<EventTrigger>().triggers.Add(eventtype_exit);
+
         weapon.GetComponent<Button>().onClick.AddListener(() =>
         {
             SelectWeaponHandler(i);
