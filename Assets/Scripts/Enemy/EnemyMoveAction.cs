@@ -111,8 +111,11 @@ namespace Unity.LEGO.Behaviours.Actions
                     // Move and rotate control movement.
                     //m_ControlMovement.Movement(m_TargetDirection, m_MinSpeed, m_MaxSpeed, m_IdleSpeed, 0, 0);
 
+                    m_PrefabTag.transform.position = m_Group.transform.position + Vector3.up;
+
                     m_Group.transform.position += m_TargetDirection * m_Speed * Time.deltaTime;
                     m_ControlMovement.Rotation(m_TargetDirection, m_RotationSpeed);
+
 
                     // Update model position.
                     m_MovementTracker.UpdateModelPosition();
@@ -181,6 +184,11 @@ namespace Unity.LEGO.Behaviours.Actions
 
         public void ExplodeAction()
         {
+            if (m_PrefabTag)
+            {
+                Destroy(m_PrefabTag);
+            }
+
             if (!m_Detonated)
             {
                 // Remove all game objects with LEGOBehaviourCollider components.
@@ -239,10 +247,6 @@ namespace Unity.LEGO.Behaviours.Actions
                     {
                         Destroy(behaviour);
                     }
-                }
-                if (m_PrefabTag)
-                {
-                    Destroy(m_PrefabTag);
                 }
             }
         }

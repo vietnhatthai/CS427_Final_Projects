@@ -675,8 +675,9 @@ namespace Unity.LEGO.Behaviours.Actions
 
 
             GameObject go = Instantiate(m_PrefabTag, position, rotation);
-            go.transform.SetParent(modelGO.transform);
-            go.transform.localPosition = new Vector3(0, 0, 0);
+            //go.transform.SetParent(modelGO.transform);
+            go.transform.parent = modelGO.transform;
+            go.transform.localPosition = new Vector3(0, 1, 0);
             BrickColliderCombiner.CombineColliders(modelGO);
 
             var behaviours = modelGO.GetComponentsInChildren<LEGOBehaviour>();
