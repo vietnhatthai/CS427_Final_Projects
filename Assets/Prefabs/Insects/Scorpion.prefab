@@ -10300,8 +10300,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3634437124422380730}
-  m_LocalRotation: {x: -0.00087319943, y: -0.0023808116, z: 0.000081148704, w: 0.99999684}
-  m_LocalPosition: {x: 19.863234, y: 0.8198663, z: 12.2674675}
+  m_LocalRotation: {x: 0.17357911, y: 0.018604662, z: -0.12425928, w: 0.9767722}
+  m_LocalPosition: {x: -0.59668994, y: 0.14819284, z: -1.5566918}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10391,6 +10391,8 @@ GameObject:
   - component: {fileID: 6964540385753316155}
   - component: {fileID: 7346329581019118592}
   - component: {fileID: 2565439783340259197}
+  - component: {fileID: 3210071515336947709}
+  - component: {fileID: 2952763555674983995}
   m_Layer: 0
   m_Name: 3820
   m_TagString: Untagged
@@ -10522,6 +10524,69 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3642099343769393354}
   m_Mesh: {fileID: -4974468161004867859, guid: c7fde84692c08a64bb5bf30f1835a7bd, type: 3}
+--- !u!114 &3210071515336947709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3642099343769393354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8d55ac113cbae4198f9406052f47b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Scope: 1
+  m_IconPath: Assets/LEGO/Gizmos/LEGO Behaviour Icons/Move Action.png
+  m_FlashColour: {r: 0.23529412, g: 0.7058824, b: 1.3176471, a: 2}
+  m_Brick: {fileID: 7275930456351937856}
+  m_BrickPivotOffset: {x: 0.0006052479, y: 0.050218537, z: 0.14844333}
+  m_Audio: {fileID: 0}
+  m_AudioVolume: 1
+  m_Pause: 1
+  m_Repeat: 1
+  m_Time: 2
+  m_Collide: 1
+  m_Speed: 15
+  m_Power: 10
+  m_RemoveBricks: 1
+  m_MinSpeed: -20
+  m_MaxSpeed: 20
+  m_IdleSpeed: 0
+  m_RotationSpeed: 360
+  m_JumpSpeed: 20
+  m_MaxJumpsInAir: 0
+  m_Gravity: 40
+  m_MinusVariable: {fileID: 11400000, guid: cb2e8a8dded8dbd4faedf2d2c0333250, type: 2}
+  m_BonusVariable: {fileID: 11400000, guid: 9261f9ea2e9216c46ad193ed9d1a494b, type: 2}
+  m_Bonus: 0
+  m_Health: 100
+  m_PrefabTag: {fileID: 0}
+--- !u!114 &2952763555674983995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3642099343769393354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def53922fe98bb84d8a1b90bbb194e46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Scope: 1
+  m_IconPath: Assets/LEGO/Gizmos/LEGO Behaviour Icons/Touch Trigger.png
+  m_FlashColour: {r: 1.6, g: 1.4509804, b: 1.1058824, a: 2}
+  m_Brick: {fileID: 7275930456351937856}
+  m_BrickPivotOffset: {x: 0.0006052479, y: 0.050218537, z: 0.14844333}
+  Progress: 0
+  Goal: 0
+  m_Conditions: []
+  m_Target: 0
+  m_SpecificTargetActions: []
+  m_Repeat: 1
+  m_Sense: 2
+  m_SenseTag: Projectile
 --- !u!1 &3656185969431236230
 GameObject:
   m_ObjectHideFlags: 0
@@ -12158,8 +12223,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4611088818962368838}
-  m_LocalRotation: {x: -0.47409272, y: -0.32833308, z: -0.62720543, w: 0.5234949}
-  m_LocalPosition: {x: -20.489998, y: -0.35000002, z: -13.620001}
+  m_LocalRotation: {x: -0.49999994, y: -0.49999994, z: -0.5, w: 0.5000001}
+  m_LocalPosition: {x: -0.04415554, y: 0.31229943, z: -0.00061927736}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23843,7 +23908,7 @@ Transform:
   - {fileID: 1862182490954965269}
   - {fileID: 303466195267947825}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &817809932881855099
 MonoBehaviour:

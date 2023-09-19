@@ -931,12 +931,12 @@ PrefabInstance:
     - target: {fileID: 8798865681914181969, guid: 7760cce19732e194e9bf2b10175a5eee,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00733108
+      value: -0.0073310966
       objectReference: {fileID: 0}
     - target: {fileID: 8798865681914181969, guid: 7760cce19732e194e9bf2b10175a5eee,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0017981246
+      value: 0.0017981288
       objectReference: {fileID: 0}
     - target: {fileID: 8798865681914181982, guid: 7760cce19732e194e9bf2b10175a5eee,
         type: 3}
@@ -10326,7 +10326,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220224704}
-  m_LocalRotation: {x: 0.21574773, y: 0.000000006057297, z: -0.0000000013383677, w: 0.9764492}
+  m_LocalRotation: {x: 0.21574773, y: -0.000000006057297, z: 0.0000000013383677, w: 0.9764492}
   m_LocalPosition: {x: -4.9, y: 8.580858, z: 12.693145}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -50128,7 +50128,7 @@ MonoBehaviour:
   textColor: {r: 0, g: 0, b: 0, a: 1}
   textFont: {fileID: 12800000, guid: 997a43b767814dd0a7642ec9b78cba41, type: 3}
   delay: 0.1
-  jsonFile: {fileID: 4900000, guid: 2251b31b6e91e924fbc54eebfea2d596, type: 3}
+  jsonFile: {fileID: 4900000, guid: 1a809a9f41a47b048a1161d70573a22e, type: 3}
 --- !u!114 &1233471598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57017,7 +57017,7 @@ MonoBehaviour:
     type: 3}
   m_Variable: {fileID: 11400000, guid: cb2e8a8dded8dbd4faedf2d2c0333250, type: 2}
   m_CostVariable: {fileID: 11400000, guid: 9261f9ea2e9216c46ad193ed9d1a494b, type: 2}
-  m_EnemySettings: {fileID: 11400000, guid: 24be2203fa3489c42ba12fc2cea04a46, type: 2}
+  m_EnemySettings: {fileID: 11400000, guid: 133aa0304b24cd243afec68fc4d25865, type: 2}
   m_BrickSnapAudio: {fileID: 0}
   m_Effect: {fileID: 179477820332501499, guid: 9c4fe1be4a9db448fbd3a52c5abdaab1, type: 3}
   m_SpawnMethod: 0
@@ -57721,12 +57721,17 @@ PrefabInstance:
     - target: {fileID: 2742812528658015894, guid: cc1e3f9715798ea4fab9885b641b3752,
         type: 3}
       propertyPath: m_WinScene
-      value: Round1-Level2
+      value: MenuWin
       objectReference: {fileID: 0}
     - target: {fileID: 2742812528658015894, guid: cc1e3f9715798ea4fab9885b641b3752,
         type: 3}
       propertyPath: m_LoseScene
       value: MenuLose
+      objectReference: {fileID: 0}
+    - target: {fileID: 2742812528658015894, guid: cc1e3f9715798ea4fab9885b641b3752,
+        type: 3}
+      propertyPath: m_WinSceneDelay
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2742812528658015895, guid: cc1e3f9715798ea4fab9885b641b3752,
         type: 3}
@@ -80500,7 +80505,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078728627}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -39.5238, y: 3.7518, z: 18.5}
+  m_LocalPosition: {x: -39.5238, y: 3.7518, z: 18}
   m_LocalScale: {x: 12.379547, y: 4.7836, z: 0.1606}
   m_ConstrainProportionsScale: 0
   m_Children: []
