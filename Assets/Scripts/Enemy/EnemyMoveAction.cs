@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using Unity.LEGO.Behaviours.Controls;
+using Unity.LEGO.Game;
 using UnityEngine;
 
 namespace Unity.LEGO.Behaviours.Actions
@@ -6,7 +8,12 @@ namespace Unity.LEGO.Behaviours.Actions
     public class EnemyMoveAction : MovementAction
     {
         [SerializeField, Tooltip("The Speed in LEGO modules.")]
-        float m_Speed = 15f;
+        public float m_Speed = 15f;
+
+        [SerializeField, Range(1, 50), Tooltip("The power of the explosion.")]
+        uint m_Power = 10;
+        [SerializeField, Tooltip("Remove bricks shortly after the explosion.")]
+        bool m_RemoveBricks = false;
 
         [SerializeField]
         int m_MinSpeed = -20;
@@ -23,11 +30,23 @@ namespace Unity.LEGO.Behaviours.Actions
         [SerializeField, Range(0.0f, 80.0f)]
         float m_Gravity = 40;
 
-        float rotationSpeed, _rotationSpeed;
+        [SerializeField, Tooltip("The variable to minus one from when the enemy is destroyed.")]
+        public Game.Variable m_MinusVariable = default;
+
+        [SerializeField, Tooltip("The variable to bonus when the enemy is destroyed.")]
+        public Game.Variable m_BonusVariable = default;
+
         int waypointIndex = 0;
         private WaypointManager m_WaypointManager;
+        bool m_Detonated;
+
+        public int m_Bonus = 0;
+        public int m_Health = 100;
+
+        public GameObject m_PrefabTag;
 
         ControlMovement m_ControlMovement;
+        List<LEGOBehaviour> m_Behaviours = new List<LEGOBehaviour>();
 
         protected override void Start()
         {
@@ -47,6 +66,15 @@ namespace Unity.LEGO.Behaviours.Actions
                 true,
                 m_Gravity
                 );
+
+            if (IsPlacedOnBrick())
+            {
+                // Find all LEGOBehaviours in scope.
+                foreach (var brick in m_ScopedBricks)
+                {
+                    m_Behaviours.AddRange(brick.GetComponentsInChildren<LEGOBehaviour>());
+                }
+            }
         }
 
 
@@ -59,6 +87,7 @@ namespace Unity.LEGO.Behaviours.Actions
 
         void FixedUpdate()
         {
+            m_Active = true;
             if (m_Active && m_WaypointManager != null && m_WaypointManager.Count() > 0 && waypointIndex < m_WaypointManager.Count())
             {
                 if (IsColliding())
@@ -80,14 +109,16 @@ namespace Unity.LEGO.Behaviours.Actions
                     m_TargetDirection.Normalize();
 
                     // Move and rotate control movement.
-                    m_ControlMovement.Movement(m_TargetDirection, m_MinSpeed, m_MaxSpeed, m_IdleSpeed, 0, 0);
+                    //m_ControlMovement.Movement(m_TargetDirection, m_MinSpeed, m_MaxSpeed, m_IdleSpeed, 0, 0);
+
+                    m_Group.transform.position += m_TargetDirection * m_Speed * Time.deltaTime;
                     m_ControlMovement.Rotation(m_TargetDirection, m_RotationSpeed);
 
                     // Update model position.
                     m_MovementTracker.UpdateModelPosition();
 
                     // check if we have reached the target
-                    if (Vector3.Distance(currentPosition, targetPosition) < 1f)
+                    if (Vector3.Distance(currentPosition, targetPosition) < 3f)
                     {
                         waypointIndex++;
                     }
@@ -146,6 +177,74 @@ namespace Unity.LEGO.Behaviours.Actions
             Gizmos.color = Color.red;
             Gizmos.DrawLine(transform.position, transform.position + forward * m_Speed);
             Gizmos.DrawSphere(transform.position + forward * m_Speed, 0.2f);
+        }
+
+        public void ExplodeAction()
+        {
+            if (!m_Detonated)
+            {
+                // Remove all game objects with LEGOBehaviourCollider components.
+                foreach (var brick in m_ScopedBricks)
+                {
+                    foreach (var behaviourCollider in brick.GetComponentsInChildren<LEGOBehaviourCollider>())
+                    {
+                        Destroy(behaviourCollider.gameObject);
+                    }
+
+                    // Restore part's original colliders.
+                    foreach (var part in brick.parts)
+                    {
+                        BrickColliderCombiner.RestoreOriginalColliders(part);
+                    }
+                }
+
+                var lift = m_Power * 0.25f;
+
+                // Send all bricks in scope flying.
+                foreach (var brick in m_ScopedBricks)
+                {
+                    brick.DisconnectAll();
+
+                    var rigidBody = brick.gameObject.GetComponent<Rigidbody>();
+                    if (!rigidBody)
+                    {
+                        rigidBody = brick.gameObject.AddComponent<Rigidbody>();
+                    }
+                    rigidBody.AddExplosionForce(m_Power, transform.position + transform.TransformVector(m_BrickPivotOffset), m_ScopedBounds.extents.magnitude, lift, ForceMode.VelocityChange);
+
+                    if (m_RemoveBricks)
+                    {
+                        brick.gameObject.AddComponent<BlinkAndDisable>();
+                    }
+                }
+
+                PlayAudio(moveWithScope: false, destroyWithAction: false);
+
+                // Delay destruction of LEGOBehaviours one frame to allow multiple Explode Actions to detonate.
+                m_Detonated = true;
+
+                if (VariableManager.GetValue(m_MinusVariable) > 0)
+                {
+                    VariableManager.SetValue(m_MinusVariable, VariableManager.GetValue(m_MinusVariable) - 1);
+                }
+
+                VariableManager.SetValue(m_BonusVariable, VariableManager.GetValue(m_BonusVariable) + m_Bonus);
+            }
+            else
+            {
+                // Destroy all the LEGOBehaviours in scope (including this script).
+                foreach (var behaviour in m_Behaviours)
+                {
+                    if (behaviour)
+                    {
+                        Destroy(behaviour);
+                    }
+                }
+                if (m_PrefabTag)
+                {
+                    Destroy(m_PrefabTag);
+                }
+            }
         }
     }
 }
